@@ -19,27 +19,11 @@ var o2 =
 	 */
 	init()
 	{
-		this.stickHeaderCall();
 	},
 
-	stickHeader: function(instance)
+	toggleNav: function(instance)
 	{
-		if($(instance).scrollTop() != 0 && $('._header').hasClass('header--fixed'))
-			return;
-
-		if($(instance).scrollTop() != 0)
-			$('._header').addClass('header--fixed');
-		else
-			$('._header').removeClass('header--fixed');
-	},
-
-	stickHeaderCall: function()
-	{
-		o2.stickHeader(window);
-
-		$(window).scroll(function()
-		{
-			o2.stickHeader(this);
-		});
+		$(instance).toggleClass('active');
+		$('._headerNav').toggleClass('header-nav--mobile');
 	},
 }
