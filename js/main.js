@@ -24,6 +24,6 @@ var o2 =
 	toggleNav: function(instance)
 	{
 		$(instance).toggleClass('active');
-		$('._headerNav').toggleClass('header-nav--mobile');
+		$('._header').toggleClass('header--expanded');
 	},
 }
