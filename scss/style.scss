@@ -1,6 +1,6 @@
 /* vendors */
-// @import 'vendors/slick';
-// @import 'vendors/slick-theme';
+@import 'vendors/slick';
+@import 'vendors/slick-theme';
 
 /* base */
 @import 'base/variables';
@@ -46,20 +46,25 @@ body
 {
 	min-width: 320px;
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
 
-// for sticky footer
-.header, .footer
+@keyframes gradient
 {
-	flex: 0 0 auto;
-}
-
-.wrapper
-{
-	flex: 1 0 auto;
+	0%
+	{
+		background-position: 0% 50%;
+	}
+	50%
+	{
+		background-position: 100% 50%;
+	}
+	100%
+	{
+		background-position: 0% 50%;
+	}
 }
 
 .container
