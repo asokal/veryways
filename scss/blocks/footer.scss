@@ -6,20 +6,88 @@
 	z-index: 5;
 	width: 100%;
 	padding: 36px 69px;
+
+	&--expanded
+	{
+		z-index: 10;
+		height: 100%;
+		align-items: flex-start;
+		@include gradient-bg;
+
+		.footer__nav
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.footer__nav-item
+		{
+			font-size: 26px;
+			margin-bottom: 40px;
+			margin-right: 0;
+			display: block !important;
+
+			&:last-child
+			{
+				margin-right: 0;
+				margin-bottom: 0;
+			}
+
+			&:nth-child(1), &:nth-last-child(1)
+			{
+				font-size: 14px;
+			}
+
+			&:nth-child(2), &:nth-last-child(2)
+			{
+				font-size: 16px;
+			}
+
+			&:nth-child(3), &:nth-last-child(3)
+			{
+				font-size: 18px;
+			}
+
+			&:nth-child(4), &:nth-last-child(4)
+			{
+				font-size: 20px;
+			}
+			
+			&.active
+			{
+				font-size: 32px;
+
+				&::after
+				{
+					display: none;
+				}
+			}
+		}
+	}
 }
 
 .footer__nav
 {
-	white-space: nowrap;
+	display: flex;
 }
 
 .footer__nav-item
 {
 	font-size: 14px;
+	line-height: 1;
+	flex-shrink: 0;
+	white-space: nowrap;
+	margin-right: 36px;
 
-	&:not(:last-child)
+	&:last-child
 	{
-		margin-right: 36px;
+		margin-right: 20px;
 	}
 
 	&.active
@@ -39,5 +107,97 @@
 			left: calc(50% - 2px);
 			bottom: -11px;
 		}
+	}
+}
+
+.footer__burger
+{
+	font-size: 0;
+	position: absolute;
+	right: 27px;
+	bottom: 28px;
+}
+
+@media (max-width: 1179px)
+{
+	.footer
+	{
+		padding: 29px 41px;
+	}
+
+	.footer__burger
+	{
+		right: 27px;
+		bottom: 23px;
+	}
+
+	.footer__nav-item
+	{
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 767px)
+{
+	.footer
+	{
+		padding: 32px 65px 32px 20px;
+
+		&--expanded
+		{
+			.footer__nav-item
+			{
+				font-size: 18px;
+				margin-bottom: 20px;
+
+				&:last-child
+				{
+					margin-right: 0;
+					margin-bottom: 0;
+				}
+
+				&:nth-child(1), &:nth-last-child(1), &:nth-child(2), &:nth-last-child(2), &:nth-child(3), &:nth-last-child(3)
+				{
+					font-size: 12px;
+				}
+
+				&:nth-child(4), &:nth-last-child(4)
+				{
+					font-size: 14px;
+				}
+
+				&:nth-child(5), &:nth-last-child(5)
+				{
+					font-size: 16px;
+				}
+				
+				&.active
+				{
+					font-size: 20px;
+
+					&::after
+					{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.footer__nav-item
+	{
+		font-size: 14px;
+		margin-right: 18px;
+
+		&:last-child
+		{
+			margin-right: 0;
+		}
+	}
+
+	.footer__burger
+	{
+		right: 19px;
+		bottom: 23px;
 	}
 }
