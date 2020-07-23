@@ -80,3 +80,37 @@ body
 		width: 100%;
 	}
 }
+
+.main-title
+{
+	@include muller();
+	font-style: normal;
+	font-weight: 800;
+	font-size: 40px;
+	line-height: 40px;
+	color: #FFFFFF;
+}
+.main-description
+{
+	@include muller();
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 140%;
+	color: #FFFFFF;
+}
+.input
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	padding-bottom: 10px;
+	opacity: 0.9;
+	border: none;
+	border-bottom: 1px solid white;
+	background: transparent;
+}
+input[type="text"]::placeholder
+{
+	@include muller();
+	color: white;
+}
