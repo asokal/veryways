@@ -18,6 +18,7 @@
 @import 'blocks/footer';
 
 @import 'pages/index';
+@import 'pages/company';
 
 a:active
 {
@@ -91,7 +92,7 @@ body
 	font-style: normal;
 	font-weight: 800;
 	font-size: 40px;
-	line-height: 40px;
+	line-height: 1;
 	color: #FFFFFF;
 }
 .main-description
@@ -100,7 +101,7 @@ body
 	font-style: normal;
 	font-weight: 300;
 	font-size: 20px;
-	line-height: 140%;
+	line-height: 1.4;
 	color: #FFFFFF;
 }
 .input

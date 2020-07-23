@@ -110,7 +110,7 @@
 /* Slider */
 
 .slick-loading .slick-list {
-  background: #fff url("../img/vendors/../img/vendors/ajax-loader.gif") center center no-repeat;
+  background: #fff url("../img/vendors/../vendors/ajax-loader.gif") center center no-repeat;
 }
 
 /* Icons */
@@ -1314,6 +1314,100 @@ button {
   text-align: center;
 }
 
+.company {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.company .main-title {
+  margin-top: 0;
+  margin-bottom: 38px;
+}
+
+.company__info {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-basis: 41.640625%;
+  -ms-flex-preferred-size: 41.640625%;
+  flex-basis: 41.640625%;
+  max-width: 41.640625%;
+  height: 100%;
+  padding: 150px 96px 100px 69px;
+}
+
+.company__slider {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-basis: 58.359375%;
+  -ms-flex-preferred-size: 58.359375%;
+  flex-basis: 58.359375%;
+  max-width: 58.359375%;
+  height: 100%;
+}
+
+.company__slider .slick-slide,
+.company__slider .slick-list,
+.company__slider .slick-track {
+  font-size: 0;
+  height: 100%;
+}
+
+.company__slide {
+  font-size: 0;
+  height: 100%;
+}
+
+.company__slide picture {
+  height: 100%;
+  font-size: 0;
+}
+
+.company__slide img,
+.company__slide source {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.company__thumb-slider {
+  width: 106px;
+  height: 75px;
+  position: absolute;
+  left: -webkit-calc(41.640625% - 53px);
+  left: calc(41.640625% - 53px);
+  top: -webkit-calc(50% - 37.5px);
+  top: calc(50% - 37.5px);
+  cursor: pointer;
+}
+
+.company__thumb-slider .slick-slide,
+.company__thumb-slider .slick-list,
+.company__thumb-slider .slick-track {
+  font-size: 0;
+  height: 100%;
+}
+
+.company__thumb-slide {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+}
+
+.company__thumb-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 a:active {
   color: inherit;
 }
@@ -1393,7 +1487,7 @@ body {
   font-style: normal;
   font-weight: 800;
   font-size: 40px;
-  line-height: 40px;
+  line-height: 1;
   color: #FFFFFF;
 }
 
@@ -1404,7 +1498,7 @@ body {
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
-  line-height: 140%;
+  line-height: 1.4;
   color: #FFFFFF;
 }
 
