@@ -19,11 +19,38 @@ var o2 =
 	 */
 	init()
 	{
+		this.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
+
+		$(window).resize(function()
+		{
+			o2.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
+		});
 	},
 
-	toggleNav: function(instance)
+	toggleNav: function(instance, toggleElem, modifier)
 	{
 		$(instance).toggleClass('active');
-		$('._header').toggleClass('header--expanded');
+		$(toggleElem).toggleClass(modifier);
 	},
+
+	priorityNav: function(navElem, navItemElem, triggerElem)
+	{
+		var navWidth = $(navElem).width(),
+			elemSumWidth = 0;
+
+		$(navItemElem).each(function()
+		{
+			elemSumWidth = elemSumWidth + $(this).outerWidth(true);
+
+			if(elemSumWidth > navWidth)
+				$(this).hide();
+			else
+				$(this).show();
+		});
+
+		if(elemSumWidth > navWidth)
+			$(triggerElem).show();
+		else
+			$(triggerElem).hide();
+	}
 }
