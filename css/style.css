@@ -1386,6 +1386,66 @@ body {
   height: 100%;
 }
 
+.main-title {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 40px;
+  color: #FFFFFF;
+}
+
+.main-description {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+
+.input {
+  font-size: 14px;
+  color: #FFFFFF;
+  padding-bottom: 10px;
+  opacity: 0.9;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+}
+
+input[type="text"]::-moz-placeholder {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+}
+
+input[type="text"]::-ms-input-placeholder {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+}
+
+input[type="text"]::placeholder {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+}
+
 @media (max-width: 1179px) {
   .header {
     padding: 25px 28px;
