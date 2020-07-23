@@ -1,0 +1,41 @@
+{# index.twig #}
+{% extends "layouts/layout.twig" %}
+
+{% block page %}
+<section class="company">
+	<div class="company__info">
+		<h1 class="main-title">Company</h1>
+
+		<div class="main-description">
+			We help to open a representative office, branch or company with an agency agreement in Russia and the EAEU. We take care of all legal, accounting and organizational work. We help to open a representative office, branch or company with an agency agreement in Russia and the EAEU. We take care of all legal, accounting and organizational work.
+		</div>
+	</div>
+	<div class="company__slider _companySlider">
+		<div class="company__slide">
+			<picture>
+				<source media="(max-width: 1023px)" srcset="./img/company-slide-md.jpg">
+				<source media="(max-width: 767px)" srcset="./img/company-slide-sm.jpg">
+				<img src="./img/company-slide-lg.jpg">
+			</picture>
+		</div>
+
+		<div class="company__slide">
+			<picture>
+				<source media="(max-width: 1023px)" srcset="./img/company-slide-md.jpg">
+				<source media="(max-width: 767px)" srcset="./img/company-slide-sm.jpg">
+				<img src="http://placekitten.com/1000/750">
+			</picture>
+		</div>
+	</div>
+
+	<div class="company__thumb-slider _companyThumbSlider">
+		<div class="company__thumb-slide _companyThumbSlide">
+			<img src="./img/company-slide-thumb.jpg" alt="">
+		</div>
+
+		<div class="company__thumb-slide _companyThumbSlide">
+			<img src="http://placekitten.com/212/150" alt="">
+		</div>
+	</div>
+</section>
+{% endblock %}
