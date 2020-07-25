@@ -29,6 +29,7 @@ h1
 	line-height: 50px;
 }
 
+
 h1.g-title, .g-title
 {
 	@include muller();
@@ -41,6 +42,14 @@ h2
 {
 	font-size: 22px;
 	line-height: 28px;
+}
+
+.main-title
+{
+	@include muller(800);
+	font-size: 40px;
+	line-height: 1;
+	color: #FFFFFF;
 }
 
 h3
@@ -63,6 +72,14 @@ p
 	}
 }
 
+.main-description
+{
+	@include muller(300);
+	font-size: 20px;
+	line-height: 1.4;
+	color: #FFFFFF;
+}
+
 a
 {
 	color: #fff;
@@ -83,5 +100,10 @@ a:focus
 	h1.g-title, .g-title
 	{
 		font-size: 80px;
+	}
+
+	.main-description
+	{
+		font-size: 12px;
 	}
 }

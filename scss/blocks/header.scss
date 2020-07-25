@@ -171,6 +171,12 @@
 	{
 		font-size: 28px;
 
+		&:not(:last-child)
+		{
+			margin-right: 0;
+			margin-bottom: 42px;
+		}
+
 		&.active
 		{
 			font-weight: bold;
