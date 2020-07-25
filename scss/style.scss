@@ -1,6 +1,7 @@
 /* vendors */
 @import 'vendors/slick';
 @import 'vendors/slick-theme';
+@import 'vendors/simplebar';
 
 /* base */
 @import 'base/variables';
@@ -20,6 +21,7 @@
 @import 'pages/index';
 @import 'pages/company';
 @import 'pages/services';
+@import 'pages/mission';
 
 a:active
 {
