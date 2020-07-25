@@ -36,6 +36,7 @@ gulp.task('sass', () => {
 var jsFiles = [
 	'js/vendors/jquery-3.4.1.min.js',
 	'js/vendors/slick.js',
+	'js/vendors/simplebar.min.js',
 	'js/main.js'
 ];
 

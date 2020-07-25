@@ -2,7 +2,27 @@
 {% extends "layouts/layout.twig" %}
 
 {% block page %}
-<section class="greetings">
-	<h1 class="g-title-big">Hello</h1>
+<section class="mission">
+	<div class="mission__wrap">
+		<h1 class="g-title">Mission</h1>
+
+		<div class="mission__text-wrap" data-simplebar data-simplebar-auto-hide="false">
+			<div class="mission__text">
+				{% for i in 0..4 %}
+					<p class="g-paragraph">
+						We help to open a representative office, branch or company with an agency agreement in Russia and the EAEU. We take care of all legal, accounting and organizational work.
+					</p>
+
+					<p class="g-paragraph">
+						We help to open a representative office, branch or company with an agency agreement in Russia and the EAEU. We take care of all legal, accounting and organizational work. We help to open a representative office, branch or company with an agency agreement in Russia and the EAEU. We take care of all legal, accounting and organizational work.
+					</p>
+
+					<p class="g-paragraph">
+						We help to open a representative office, branch or company with an agency agreement in Russia and the EAEU. We take care of all legal, accounting and organizational work. We help to open a representative office, branch or company with an agency agreement in Russia and the EAEU. We take care of all legal, accounting and organizational work.
+					</p>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 </section>
 {% endblock %}

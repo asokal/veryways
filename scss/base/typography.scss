@@ -44,9 +44,10 @@ h2
 	line-height: 28px;
 }
 
-.g-title-big
+.g-title
 {
 	@include muller(800);
+	margin-top: 0;
 	font-size: 40px;
 	line-height: 1;
 	color: #FFFFFF;
@@ -78,6 +79,13 @@ p
 	font-size: 20px;
 	line-height: 1.4;
 	color: #FFFFFF;
+	margin-top: 0;
+	margin-bottom: 20px;
+
+	&:last-child
+	{
+		margin-bottom: 0;
+	}
 }
 
 a

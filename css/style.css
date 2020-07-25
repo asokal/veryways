@@ -284,6 +284,264 @@
   opacity: 0.75;
 }
 
+[data-simplebar] {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.simplebar-wrapper {
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.simplebar-mask {
+  direction: inherit;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: auto !important;
+  height: auto !important;
+  z-index: 0;
+}
+
+.simplebar-offset {
+  direction: inherit !important;
+  -webkit-box-sizing: inherit !important;
+  box-sizing: inherit !important;
+  resize: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.simplebar-content-wrapper {
+  direction: inherit;
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  position: relative;
+  display: block;
+  height: 100%;
+  /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */
+  width: auto;
+  max-width: 100%;
+  /* Not required for horizontal scroll to trigger */
+  max-height: 100%;
+  /* Needed for vertical scroll to trigger */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.simplebar-content-wrapper::-webkit-scrollbar,
+.simplebar-hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.simplebar-content:before,
+.simplebar-content:after {
+  content: ' ';
+  display: table;
+}
+
+.simplebar-placeholder {
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.simplebar-height-auto-observer-wrapper {
+  -webkit-box-sizing: inherit !important;
+  box-sizing: inherit !important;
+  height: 100%;
+  width: 100%;
+  max-width: 1px;
+  position: relative;
+  float: left;
+  max-height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  -webkit-box-flex: inherit;
+  -webkit-flex-grow: inherit;
+  -ms-flex-positive: inherit;
+  flex-grow: inherit;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.simplebar-height-auto-observer {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000%;
+  width: 1000%;
+  min-height: 1px;
+  min-width: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-content {
+  pointer-events: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-track {
+  pointer-events: all;
+}
+
+.simplebar-scrollbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 10px;
+}
+
+.simplebar-scrollbar:before {
+  position: absolute;
+  content: '';
+  background: #fff;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  left: 0px;
+  right: 0px;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  /* When hovered, remove all transitions from drag handle */
+  opacity: 1;
+  -webkit-transition: opacity 0s linear;
+  -o-transition: opacity 0s linear;
+  transition: opacity 0s linear;
+}
+
+.simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 3px;
+}
+
+.simplebar-track.simplebar-vertical:before {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  content: '';
+  height: 100%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 0px;
+  bottom: 0px;
+}
+
+.simplebar-track.simplebar-horizontal {
+  left: 0;
+  height: 11px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+  height: 100%;
+  left: 2px;
+  right: 2px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  right: auto;
+  left: 0;
+  top: 2px;
+  height: 7px;
+  min-height: 0;
+  min-width: 10px;
+  width: auto;
+}
+
+/* Rtl support */
+
+[data-simplebar-direction='rtl'] .simplebar-track.simplebar-vertical {
+  right: auto;
+  left: 0;
+}
+
+.hs-dummy-scrollbar-size {
+  direction: rtl;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  height: 500px;
+  width: 500px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.simplebar-hide-scrollbar {
+  position: fixed;
+  left: 0;
+  visibility: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 /* base */
 
 /*  Переменные со шрифтами  */
@@ -944,10 +1202,11 @@ h2 {
   line-height: 28px;
 }
 
-.g-title-big {
+.g-title {
   font-family: 'Muller';
   font-weight: 800;
   font-style: normal;
+  margin-top: 0;
   font-size: 40px;
   line-height: 1;
   color: #FFFFFF;
@@ -974,6 +1233,12 @@ p:last-child {
   font-size: 20px;
   line-height: 1.4;
   color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.g-paragraph:last-child {
+  margin-bottom: 0;
 }
 
 a {
@@ -1574,6 +1839,43 @@ input[type="text"]::placeholder {
   font-size: 20px;
 }
 
+.mission {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 167px;
+  padding-right: 70px;
+}
+
+.mission .g-title {
+  margin-bottom: 35px;
+}
+
+.mission__wrap {
+  max-width: 100%;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+}
+
+.mission__text-wrap {
+  width: 1042px;
+  max-width: 100%;
+  max-height: 320px;
+  padding-right: 40px;
+}
+
+.mission__text {
+  max-width: 892px;
+}
+
 a:active {
   color: inherit;
 }
@@ -1675,6 +1977,18 @@ body {
 
   .services__dots-slider {
     right: -156px;
+  }
+
+  .mission {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .mission__text-wrap {
+    width: 1042px;
+    max-width: 100%;
+    max-height: 320px;
+    padding-right: 38px;
   }
 }
 
@@ -1995,6 +2309,18 @@ body {
 
   .services__dots-slide.slick-active:not(.slick-current) ~ .slick-active:not(.slick-current) ~ .slick-active:not(.slick-current) {
     font-size: 20px;
+  }
+
+  .mission {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .mission__text-wrap {
+    width: 1042px;
+    max-width: 100%;
+    max-height: 325px;
+    padding-right: 16px;
   }
 
   .container {
