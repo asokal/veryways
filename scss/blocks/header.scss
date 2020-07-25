@@ -161,7 +161,10 @@
 	{
 		padding: 25px 28px;
 	}
+}
 
+@media (max-width: 1023px)
+{
 	.header__nav
 	{
 		display: none;
@@ -201,6 +204,12 @@
 	.header
 	{
 		padding: 23px 20px;
+	}
+
+	.header__logo
+	{
+		width: 66px;
+		height: 29px;
 	}
 
 	.header__nav-item
