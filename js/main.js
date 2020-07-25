@@ -63,88 +63,92 @@ var o2 =
 		
 		companySliders: function()
 		{
-			var $companySlider = $('._companySlider'),
-			$companyThumbSlider = $('._companyThumbSlider');
-			
-			$companySlider.slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: false,
-				fade: true,
-				rows: 0,
-				autoplay: true,
-				autoplaySpeed: 5000
-			});
+			if($('._companySlider')[0])
+			{
+				var $companySlider = $('._companySlider'),
+				$companyThumbSlider = $('._companyThumbSlider');
+				
+				$companySlider.slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					fade: true,
+					rows: 0,
+					autoplay: true,
+					autoplaySpeed: 5000
+				});
 
-			$companyThumbSlider.slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				initialSlide: 1,
-				arrows: false,
-				fade: true,
-				rows: 0,
-				autoplay: true,
-				autoplaySpeed: 5000
-			});
-			
-			$companyThumbSlider.click(function() {
-				$companySlider.slick('slickNext');
-				$companyThumbSlider.slick('slickNext');
-			});
+				$companyThumbSlider.slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					initialSlide: 1,
+					arrows: false,
+					fade: true,
+					rows: 0,
+					autoplay: true,
+					autoplaySpeed: 5000
+				});
+				
+				$companyThumbSlider.click(function() {
+					$companySlider.slick('slickNext');
+					$companyThumbSlider.slick('slickNext');
+				});
+			}
 		},
 		
 		servicesSlider: function()
 		{
-			var $servicesSlider = $('._servicesSlider'),
-				$servicesDotsSlider = $('._servicesDotsSlider'),
-				scrollCount = null;
-				scroll= null;
+			if($('._servicesSlider')[0])
+			{
+				var $servicesSlider = $('._servicesSlider'),
+					$servicesDotsSlider = $('._servicesDotsSlider'),
+					scrollCount = null;
+					scroll= null;
+				
+				$servicesSlider.slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					fade: true,
+					rows: 0,
+					asNavFor: '._servicesDotsSlider',
+					autoplay: true,
+					autoplaySpeed: 5000
+				});
+				
+				$servicesDotsSlider.slick({
+					centerMode: true,
+					centerPadding: '0px',
+					arrows: false,
+					rows: 0,
+					slidesToShow: 7,
+					slidesToScroll: 1,
+					focusOnSelect: true,
+					asNavFor: '._servicesSlider',
+					autoplay: true,
+					autoplaySpeed: 5000
+				});
 			
-			$servicesSlider.slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: false,
-				fade: true,
-				rows: 0,
-				asNavFor: '._servicesDotsSlider',
-				autoplay: true,
-				autoplaySpeed: 5000
-			});
-			
-			$servicesDotsSlider.slick({
-				centerMode: true,
-				centerPadding: '0px',
-				arrows: false,
-				rows: 0,
-				slidesToShow: 7,
-				slidesToScroll: 1,
-				focusOnSelect: true,
-				asNavFor: '._servicesSlider',
-				autoplay: true,
-				autoplaySpeed: 5000
-			});
-		
-		$('body').on('wheel', (function(e) {
-			e.preventDefault();
-			
-			clearTimeout(scroll);
-			
-			scroll = setTimeout(function(){scrollCount=0;}, 200);
-			if(scrollCount)
-			return 0;
-			
-			scrollCount = 1;
-			
-			if (e.originalEvent.deltaY > 0)
-				$($servicesSlider).slick('slickNext');
-			else
-				$($servicesSlider).slick('slickPrev');
-		}));
+				$('body').on('wheel', (function(e) {
+					clearTimeout(scroll);
+					
+					scroll = setTimeout(function(){scrollCount=0;}, 200);
+					if(scrollCount)
+					return 0;
+					
+					scrollCount = 1;
+					
+					if (e.originalEvent.deltaY > 0)
+						$($servicesSlider).slick('slickNext');
+					else
+						$($servicesSlider).slick('slickPrev');
+				}));
 
-		$servicesSlider.click(function() {
-			$servicesSlider.slick('slickNext');
-			$servicesDotsSlider.slick('slickNext');
-		});
+				$servicesSlider.click(function() {
+					$servicesSlider.slick('slickNext');
+					$servicesDotsSlider.slick('slickNext');
+				});
+			}
+		}
 	}
-}
 }
