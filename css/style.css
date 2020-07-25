@@ -944,6 +944,15 @@ h2 {
   line-height: 28px;
 }
 
+.main-title {
+  font-family: 'Muller';
+  font-weight: 800;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 1;
+  color: #FFFFFF;
+}
+
 h3 {
   font-size: 16px;
   margin-bottom: 10px;
@@ -956,6 +965,15 @@ h4 {
 
 p:last-child {
   margin-bottom: 0;
+}
+
+.main-description {
+  font-family: 'Muller';
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #FFFFFF;
 }
 
 a {
@@ -974,6 +992,44 @@ a:focus {
 button {
   outline: none;
   border: 0;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+}
+
+input[type="text"]::-moz-placeholder {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+}
+
+input[type="text"]::-ms-input-placeholder {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+}
+
+input[type="text"]::placeholder {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+}
+
+.input {
+  font-size: 14px;
+  color: #FFFFFF;
+  padding-bottom: 10px;
+  opacity: 0.9;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
 }
 
 /* layouts */
@@ -1319,6 +1375,7 @@ button {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -1365,6 +1422,7 @@ button {
 }
 
 .company__slide picture {
+  width: 100%;
   height: 100%;
   font-size: 0;
 }
@@ -1406,6 +1464,115 @@ button {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.services {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 69px;
+  padding-right: 74px;
+  position: relative;
+}
+
+.services__slider {
+  max-width: 892px;
+}
+
+.services__slider .slick-track {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.services__slide {
+  font-family: 'Muller';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 35px;
+  line-height: 1.4;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.services__slide:not(:slick-current) {
+  visibility: hidden;
+}
+
+.services__dots-slider {
+  height: 50px;
+  width: 400px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  position: absolute;
+  right: -110px;
+}
+
+.services__dots-slide {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  margin-bottom: 30px;
+  font-family: 'Muller';
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1;
+  -webkit-transition: font-size .2s;
+  -o-transition: font-size .2s;
+  transition: font-size .2s;
+}
+
+.services__dots-slide.slick-current {
+  font-size: 30px;
+  font-family: 'Muller';
+  font-weight: bold;
+  font-style: normal;
+  -webkit-transition: font-size .2s;
+  -o-transition: font-size .2s;
+  transition: font-size .2s;
+}
+
+.services__dots-slide.slick-current ~ .slick-active:not(.slick-current) {
+  font-size: 20px;
+}
+
+.services__dots-slide.slick-current ~ .slick-active:not(.slick-current) ~ .slick-active:not(.slick-current) {
+  font-size: 16px;
+}
+
+.services__dots-slide.slick-current ~ .slick-active:not(.slick-current) ~ .slick-active:not(.slick-current) ~ .slick-active:not(.slick-current) {
+  font-size: 12px;
+}
+
+.services__dots-slide.slick-active:not(.slick-current) {
+  font-size: 12px;
+}
+
+.services__dots-slide.slick-active:not(.slick-current) ~ .slick-active:not(.slick-current) {
+  font-size: 16px;
+}
+
+.services__dots-slide.slick-active:not(.slick-current) ~ .slick-active:not(.slick-current) ~ .slick-active:not(.slick-current) {
+  font-size: 20px;
 }
 
 a:active {
@@ -1470,6 +1637,7 @@ body {
 
 .wrapper {
   height: 100vh;
+  width: 100vw;
 }
 
 .container {
@@ -1478,66 +1646,6 @@ body {
   width: 1280px;
   max-width: 100%;
   height: 100%;
-}
-
-.main-title {
-  font-family: 'Muller';
-  font-weight: normal;
-  font-style: normal;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 40px;
-  line-height: 1;
-  color: #FFFFFF;
-}
-
-.main-description {
-  font-family: 'Muller';
-  font-weight: normal;
-  font-style: normal;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 1.4;
-  color: #FFFFFF;
-}
-
-.input {
-  font-size: 14px;
-  color: #FFFFFF;
-  padding-bottom: 10px;
-  opacity: 0.9;
-  border: none;
-  border-bottom: 1px solid white;
-  background: transparent;
-}
-
-input[type="text"]::-webkit-input-placeholder {
-  font-family: 'Muller';
-  font-weight: normal;
-  font-style: normal;
-  color: white;
-}
-
-input[type="text"]::-moz-placeholder {
-  font-family: 'Muller';
-  font-weight: normal;
-  font-style: normal;
-  color: white;
-}
-
-input[type="text"]::-ms-input-placeholder {
-  font-family: 'Muller';
-  font-weight: normal;
-  font-style: normal;
-  color: white;
-}
-
-input[type="text"]::placeholder {
-  font-family: 'Muller';
-  font-weight: normal;
-  font-style: normal;
-  color: white;
 }
 
 @media (max-width: 1179px) {
@@ -1551,6 +1659,11 @@ input[type="text"]::placeholder {
 
   .header__nav-item {
     font-size: 28px;
+  }
+
+  .header__nav-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 42px;
   }
 
   .header__nav-item.active {
@@ -1580,12 +1693,69 @@ input[type="text"]::placeholder {
   .footer__nav-item {
     font-size: 16px;
   }
+
+  .company__info {
+    padding: 150px 96px 100px 28px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .company {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .company__info {
+    -webkit-flex-basis: unset;
+    -ms-flex-preferred-size: unset;
+    flex-basis: unset;
+    max-height: 50%;
+    width: 100%;
+    max-width: 100%;
+    padding: 79px 30px 100px 30px;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .company__slider {
+    -webkit-flex-basis: unset;
+    -ms-flex-preferred-size: unset;
+    flex-basis: unset;
+    max-height: 50%;
+    width: 100%;
+    max-width: 100%;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+
+  .company__slider .slick-slide,
+  .company__slider .slick-list,
+  .company__slider .slick-track {
+    height: 100%;
+    width: 100%;
+  }
+
+  .company__thumb-slider {
+    left: -webkit-calc(50% - 53px);
+    left: calc(50% - 53px);
+    top: -webkit-calc(50% - 37.5px);
+    top: calc(50% - 37.5px);
+  }
 }
 
 @media (max-width: 767px) {
   h1.g-title,
   .g-title {
     font-size: 80px;
+  }
+
+  .main-description {
+    font-size: 12px;
   }
 
   .header {
@@ -1658,6 +1828,25 @@ input[type="text"]::placeholder {
   .footer__burger {
     right: 19px;
     bottom: 23px;
+  }
+
+  .company .main-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .company__info {
+    padding: 69px 30px 80px 30px;
+  }
+
+  .company__thumb-slider {
+    width: 72px;
+    height: 51px;
+    position: absolute;
+    left: -webkit-calc(50% - 36px);
+    left: calc(50% - 36px);
+    top: -webkit-calc(50% - 26.5px);
+    top: calc(50% - 26.5px);
   }
 
   .container {

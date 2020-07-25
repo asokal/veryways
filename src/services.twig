@@ -1,0 +1,82 @@
+{# index.twig #}
+{% extends "layouts/layout.twig" %}
+
+{% block page %}
+<div class="services">
+	<div class="services__slider _servicesSlider">
+		<div class="services__slide">
+			We help to open a representative office, branch or company with an agency agreement in Russia and the EAEU. We take care of all legal, accounting and organizational work.
+		</div>
+
+		<div class="services__slide">
+			We understand the specifics of the partner’s products and services.
+		</div>
+
+		<div class="services__slide">
+			We carry out a deep analysis of your market segment in Russia and the EAEU for the subsequent effective placement of products and services of a partner.
+		</div>
+
+		<div class="services__slide">
+			We appoint a personal manager who professionally studies all the intricacies of the partner’s products, services and customers for the further organization of effective sales. If necessary, the manager will be sent to the partner's production area for more in-depth training. Also, the manager will come to the production partner with potential customers and act as a translator.
+		</div>
+
+		<div class="services__slide">
+			We protect the copyright of the partner’s brand in Russia and the EAEU by applying customs and legal sanctions against counterfeit products and dishonest services.
+		</div>
+
+		<div class="services__slide">
+			We are developing a modern corporate website or online store of the company, fully localized for Russia and the EAEU.
+		</div>
+
+		<div class="services__slide">
+			We open and maintain pages in all popular social networks, as well as in thematic forums.
+		</div>
+
+		<div class="services__slide">
+			We are preparing a strategy for promoting your brand in search engines and social networks - SEO / SMM.
+		</div>
+
+		<div class="services__slide">
+			We organize preparations for thematic conferences and exhibitions and take part in them.
+		</div>
+
+		<div class="services__slide">
+			We carry out advertising and reputation support of the brand.
+		</div>
+
+		<div class="services__slide">
+			We fully prepare the localization of your brand, products and services.
+		</div>
+
+		<div class="services__slide">
+			We participate in state and commercial electronic bidding, tenders.
+		</div>
+
+		<div class="services__slide">
+			We place the partner’s products in the most advanced online aggregators and trading networks in Russia and the EAEU.
+		</div>
+
+		<div class="services__slide">
+			We solve customs, warehouse and logistics issues.
+		</div>
+
+		<div class="services__slide">
+			We provide a development team for the complete localization of online companies.
+		</div>
+	</div>
+
+	<div class="services__dots-slider _servicesDotsSlider">
+		{% for i in 1..9 %}
+			<div class="services__dots-slide">
+				0{{i}}
+			</div>
+		{% endfor %}
+
+		{% for i in 10..15 %}
+			<div class="services__dots-slide">
+				{{i}}
+			</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

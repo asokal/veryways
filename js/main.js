@@ -1,22 +1,22 @@
 "use strict"
 
 /**
- * инициализация всех инициализаций
- */
+* инициализация всех инициализаций
+*/
 $(document).ready(function()
 {
 	o2.init();
 });
 
 /**
- * основной объект
- * @type {object}
- */
+* основной объект
+* @type {object}
+*/
 var o2 =
 {
 	/**
-	 * вызов функций, которые должны запускаться при загрузке страницы
-	 */
+	* вызов функций, которые должны запускаться при загрузке страницы
+	*/
 	init()
 	{
 		this.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
@@ -26,64 +26,121 @@ var o2 =
 		});
 		this.sliders.init();
 	},
-
+	
 	toggleNav: function(instance, toggleElem, modifier)
 	{
 		$(instance).toggleClass('active');
 		$(toggleElem).toggleClass(modifier);
 	},
-
+	
 	priorityNav: function(navElem, navItemElem, triggerElem)
 	{
 		var navWidth = $(navElem).width(),
-			elemSumWidth = 0;
-
+		elemSumWidth = 0;
+		
 		$(navItemElem).each(function()
 		{
 			elemSumWidth = elemSumWidth + $(this).outerWidth(true);
-
+			
 			if(elemSumWidth > navWidth)
-				$(this).hide();
+			$(this).hide();
 			else
-				$(this).show();
+			$(this).show();
 		});
-
+		
 		if(elemSumWidth > navWidth)
-			$(triggerElem).show();
+		$(triggerElem).show();
 		else
-			$(triggerElem).hide();
+		$(triggerElem).hide();
 	},
-
+	
 	sliders:
 	{
 		init: function()
 		{
 			this.companySliders();
+			this.servicesSlider();
 		},
-
+		
 		companySliders: function()
 		{
-			var companySlider = $('._companySlider').slick({
+			var $companySlider = $('._companySlider'),
+			$companyThumbSlider = $('._companyThumbSlider');
+			
+			$companySlider.slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				arrows: false,
 				fade: true,
-				rows: 0
+				rows: 0,
+				autoplay: true,
+				autoplaySpeed: 5000
 			});
 
-			var companyThumbSlider = $('._companyThumbSlider').slick({
+			$companyThumbSlider.slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				arrows: false,
 				initialSlide: 1,
+				arrows: false,
 				fade: true,
-				rows: 0
+				rows: 0,
+				autoplay: true,
+				autoplaySpeed: 5000
 			});
-
-			companyThumbSlider.click(function() {
-				companySlider.slick('slickNext');
-				companyThumbSlider.slick('slickNext');
+			
+			$companyThumbSlider.click(function() {
+				$companySlider.slick('slickNext');
+				$companyThumbSlider.slick('slickNext');
 			});
-		}
+		},
+		
+		servicesSlider: function()
+		{
+			var $servicesSlider = $('._servicesSlider'),
+				$servicesDotsSlider = $('._servicesDotsSlider'),
+				scrollCount = null;
+				scroll= null;
+			
+			$servicesSlider.slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: false,
+				fade: true,
+				rows: 0,
+				asNavFor: '._servicesDotsSlider',
+				autoplay: true,
+				autoplaySpeed: 5000
+			});
+			
+			$servicesDotsSlider.slick({
+				centerMode: true,
+				centerPadding: '0px',
+				arrows: false,
+				rows: 0,
+				slidesToShow: 7,
+				slidesToScroll: 1,
+				focusOnSelect: true,
+				asNavFor: '._servicesSlider',
+				autoplay: true,
+				autoplaySpeed: 5000
+			});
+		
+		$servicesSlider.on('wheel', (function(e) {
+			e.preventDefault();
+			
+			clearTimeout(scroll);
+			
+			scroll = setTimeout(function(){scrollCount=0;}, 200);
+			if(scrollCount)
+			return 0;
+			
+			scrollCount = 1;
+			
+			if (e.originalEvent.deltaY > 0)
+				$(this).slick('slickNext');
+			else
+				$(this).slick('slickPrev');
+		}));
 	}
+}
 }
