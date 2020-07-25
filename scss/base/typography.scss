@@ -30,7 +30,7 @@ h1
 }
 
 
-h1.g-title, .g-title
+h1.g-title-big, .g-title-big
 {
 	@include muller();
 	font-size: 140px;
@@ -44,7 +44,7 @@ h2
 	line-height: 28px;
 }
 
-.main-title
+.g-title-big
 {
 	@include muller(800);
 	font-size: 40px;
@@ -72,7 +72,7 @@ p
 	}
 }
 
-.main-description
+.g-paragraph
 {
 	@include muller(300);
 	font-size: 20px;
@@ -97,12 +97,17 @@ a:focus
 
 @media (max-width: 767px)
 {
-	h1.g-title, .g-title
+	h1.g-title-big, .g-title-big
 	{
 		font-size: 80px;
 	}
 
-	.main-description
+	.g-title
+	{
+		font-size: 26px;
+	}
+
+	.g-paragraph
 	{
 		font-size: 12px;
 	}
