@@ -73,8 +73,7 @@
 {
 	.partner
 	{
-		padding-left: 28px;
-		padding-right: 28px;
+		padding: 0 28px;
 	}
 
 	.partner-form__left
@@ -102,6 +101,21 @@
 		.g-upload
 		{
 			margin-bottom: 40px;
+		}
+	}
+}
+
+@media (max-width: 767px)
+{
+	.partner
+	{
+		padding: 0 20px;
+		overflow-y: scroll;
+		justify-content: flex-start;
+
+		.g-btn
+		{
+			width: 100%;
 		}
 	}
 }

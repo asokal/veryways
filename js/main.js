@@ -24,7 +24,7 @@ var o2 =
 			o2.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		});
 		this.sliders.init();
-		this.upload();
+		this.upload.init();
 	},
 	
 	toggleNav: function(instance, toggleElem, modifier)
@@ -153,40 +153,39 @@ var o2 =
 		}
 	},
 	
-	upload: function()
+	upload:
 	{
-		var fileArray = [];
+		fileArray: [],
 
-		var sreenshotsPreview = function(input, placeToInsertImagePreview)
+		init: function()
+		{
+			$('._upload').on('change', function() {
+				o2.upload.filePreviews(this, '._uploadItems');
+			});
+		},
+
+		filePreviews: function(input, placeToInsertImagePreview)
 		{
 
 			if (input.files)
 			{
 				var filesAmount = input.files.length;
 				
-
 				for (i = 0; i < filesAmount; i++)
 				{
 					var reader = new FileReader();
-					console.log(input.files[i].name);
 
-					reader.onload = function(event)
-					{
-						// $($.parseHTML('<div>' + input.files[i].name + '</div>')).appendTo(placeToInsertImagePreview).wrap('<div class="upload-item"></div>');
-						// $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview).wrap('<div class="upload-item"></div>')
-						console.log( event.target);
-						console.log(input.files[i].name);
-					}
+					$($.parseHTML('<div class="g-uload__item _uploadItem">' + input.files[i].name + '<div class="g-uload__item-delete" onclick="o2.upload.clearFiles();"><img src="./img/close.svg" alt=""></div></div>')).appendTo(placeToInsertImagePreview);
 
 					reader.readAsDataURL(input.files[i]);
 				}
 			}
+		},
 
-		};
-
-		$('#upload').on('change', function()
+		clearFiles: function()
 		{
-			sreenshotsPreview(this, '._uploadItems');
-		});
+			$('._upload')[0].value = "";
+			$('._uploadItem').remove();
+		}
 	}
 }
