@@ -26,34 +26,34 @@ var o2 =
 		this.sliders.init();
 		this.upload.init();
 	},
-	
+
 	toggleNav: function(instance, toggleElem, modifier)
 	{
 		$(instance).toggleClass('active');
 		$(toggleElem).toggleClass(modifier);
 	},
-	
+
 	priorityNav: function(navElem, navItemElem, triggerElem)
 	{
 		var navWidth = $(navElem).width(),
 		elemSumWidth = 0;
-		
+
 		$(navItemElem).each(function()
 		{
 			elemSumWidth = elemSumWidth + $(this).outerWidth(true);
-			
+
 			if(elemSumWidth > navWidth)
 			$(this).hide();
 			else
 			$(this).show();
 		});
-		
+
 		if(elemSumWidth > navWidth)
 		$(triggerElem).show();
 		else
 		$(triggerElem).hide();
 	},
-	
+
 	sliders:
 	{
 		init: function()
@@ -61,14 +61,14 @@ var o2 =
 			this.companySliders();
 			this.servicesSlider();
 		},
-		
+
 		companySliders: function()
 		{
 			if($('._companySlider')[0])
 			{
 				var $companySlider = $('._companySlider'),
 				$companyThumbSlider = $('._companyThumbSlider');
-				
+
 				$companySlider.slick({
 					slidesToShow: 1,
 					slidesToScroll: 1,
@@ -78,7 +78,7 @@ var o2 =
 					autoplay: true,
 					autoplaySpeed: 5000
 				});
-				
+
 				$companyThumbSlider.slick({
 					slidesToShow: 1,
 					slidesToScroll: 1,
@@ -89,14 +89,14 @@ var o2 =
 					autoplay: true,
 					autoplaySpeed: 5000
 				});
-				
+
 				$companyThumbSlider.click(function() {
 					$companySlider.slick('slickNext');
 					$companyThumbSlider.slick('slickNext');
 				});
 			}
 		},
-		
+
 		servicesSlider: function()
 		{
 			if($('._servicesSlider')[0])
@@ -105,7 +105,7 @@ var o2 =
 				$servicesDotsSlider = $('._servicesDotsSlider'),
 				scrollCount = null;
 				scroll= null;
-				
+
 				$servicesSlider.slick({
 					slidesToShow: 1,
 					slidesToScroll: 1,
@@ -116,7 +116,7 @@ var o2 =
 					autoplay: true,
 					autoplaySpeed: 5000
 				});
-				
+
 				$servicesDotsSlider.slick({
 					centerMode: true,
 					centerPadding: '0px',
@@ -129,22 +129,22 @@ var o2 =
 					autoplay: true,
 					autoplaySpeed: 5000
 				});
-				
+
 				$('body').on('wheel', (function(e) {
 					clearTimeout(scroll);
-					
+
 					scroll = setTimeout(function(){scrollCount=0;}, 200);
 					if(scrollCount)
 					return 0;
-					
+
 					scrollCount = 1;
-					
+
 					if (e.originalEvent.deltaY > 0)
 					$($servicesSlider).slick('slickNext');
 					else
 					$($servicesSlider).slick('slickPrev');
 				}));
-				
+
 				$servicesSlider.click(function() {
 					$servicesSlider.slick('slickNext');
 					$servicesDotsSlider.slick('slickNext');
@@ -152,30 +152,32 @@ var o2 =
 			}
 		}
 	},
-	
+
 	upload:
 	{
 		fileArray: [],
 
 		init: function()
 		{
-			$('._upload').on('change', function() {
-				o2.upload.filePreviews(this, '._uploadItems');
+			$('._fileInput').on('change', function() {
+				o2.upload.filePreviews(this, '._uploadItems', '._upload');
 			});
 		},
 
-		filePreviews: function(input, placeToInsertImagePreview)
+		filePreviews: function(input, itemsWrap, directWrap)
 		{
 
 			if (input.files)
 			{
 				var filesAmount = input.files.length;
-				
+
 				for (i = 0; i < filesAmount; i++)
 				{
 					var reader = new FileReader();
 
-					$($.parseHTML('<div class="g-uload__item _uploadItem">' + input.files[i].name + '<div class="g-uload__item-delete" onclick="o2.upload.clearFiles();"><img src="./img/close.svg" alt=""></div></div>')).appendTo(placeToInsertImagePreview);
+					$($.parseHTML('<div class="g-uload__item _uploadItem">' + input.files[i].name + '</div>')).appendTo(itemsWrap);
+
+					$($.parseHTML('<div class="g-uload__clear _uploadClear" onclick="o2.upload.clearFiles();"><img src="assets/template/img/close.svg" alt=""></div>')).appendTo(directWrap);
 
 					reader.readAsDataURL(input.files[i]);
 				}
@@ -184,8 +186,9 @@ var o2 =
 
 		clearFiles: function()
 		{
-			$('._upload')[0].value = "";
+			$('._fileInput')[0].value = "";
 			$('._uploadItem').remove();
+			$('._uploadClear').remove();
 		}
 	}
 }
