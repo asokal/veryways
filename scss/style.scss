@@ -23,6 +23,7 @@
 @import 'pages/services';
 @import 'pages/mission';
 @import 'pages/partner';
+@import 'pages/contacts';
 
 a:active
 {
@@ -130,9 +131,18 @@ body
 {
 	.message-box
 	{
+		padding: 0 20px;
+		position: relative;
+
 		.g-title
 		{
 			margin-bottom: 20px;
+		}
+
+		.g-btn
+		{
+			position: absolute;
+			bottom: 77px;
 		}
 
 		&--404
@@ -142,5 +152,6 @@ body
 				font-size: 120px;
 			}
 		}
+		
 	}
 }
