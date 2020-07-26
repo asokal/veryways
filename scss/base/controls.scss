@@ -57,6 +57,7 @@ input[type="text"]::placeholder
 	padding: 27px 20px;
 	border: 1px dashed rgba(255, 255, 255, .5);
 	overflow: hidden;
+	position: relative;
 }
 
 .g-upload__add
@@ -83,6 +84,7 @@ input[type="text"]::placeholder
 .g-uload__items
 {
 	display: flex;
+	overflow: hidden;
 }
 
 .g-uload__item
@@ -91,7 +93,6 @@ input[type="text"]::placeholder
 	font-size: 14px;
 	line-height: 1.4;
 	color: rgba(255, 255, 255, .9);
-	position: relative;
 
 	&:not(:last-child)
 	{
@@ -99,14 +100,14 @@ input[type="text"]::placeholder
 	}
 }
 
-.g-uload__item-delete
+.g-uload__clear
 {
 	width: 10px;
 	height: 10px;
 	font-size: 0;
 	position: absolute;
-	right: -16px;
-	top: -3px;
+	top: 10px;
+	right: 10px;
 	cursor: pointer;
 
 	img
