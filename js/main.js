@@ -24,6 +24,7 @@ var o2 =
 			o2.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		});
 		this.sliders.init();
+		this.upload();
 	},
 	
 	toggleNav: function(instance, toggleElem, modifier)
@@ -42,9 +43,9 @@ var o2 =
 			elemSumWidth = elemSumWidth + $(this).outerWidth(true);
 			
 			if(elemSumWidth > navWidth)
-				$(this).hide();
+			$(this).hide();
 			else
-				$(this).show();
+			$(this).show();
 		});
 		
 		if(elemSumWidth > navWidth)
@@ -77,7 +78,7 @@ var o2 =
 					autoplay: true,
 					autoplaySpeed: 5000
 				});
-
+				
 				$companyThumbSlider.slick({
 					slidesToShow: 1,
 					slidesToScroll: 1,
@@ -101,9 +102,9 @@ var o2 =
 			if($('._servicesSlider')[0])
 			{
 				var $servicesSlider = $('._servicesSlider'),
-					$servicesDotsSlider = $('._servicesDotsSlider'),
-					scrollCount = null;
-					scroll= null;
+				$servicesDotsSlider = $('._servicesDotsSlider'),
+				scrollCount = null;
+				scroll= null;
 				
 				$servicesSlider.slick({
 					slidesToShow: 1,
@@ -128,7 +129,7 @@ var o2 =
 					autoplay: true,
 					autoplaySpeed: 5000
 				});
-			
+				
 				$('body').on('wheel', (function(e) {
 					clearTimeout(scroll);
 					
@@ -139,16 +140,53 @@ var o2 =
 					scrollCount = 1;
 					
 					if (e.originalEvent.deltaY > 0)
-						$($servicesSlider).slick('slickNext');
+					$($servicesSlider).slick('slickNext');
 					else
-						$($servicesSlider).slick('slickPrev');
+					$($servicesSlider).slick('slickPrev');
 				}));
-
+				
 				$servicesSlider.click(function() {
 					$servicesSlider.slick('slickNext');
 					$servicesDotsSlider.slick('slickNext');
 				});
 			}
 		}
+	},
+	
+	upload: function()
+	{
+		var fileArray = [];
+
+		var sreenshotsPreview = function(input, placeToInsertImagePreview)
+		{
+
+			if (input.files)
+			{
+				var filesAmount = input.files.length;
+				
+
+				for (i = 0; i < filesAmount; i++)
+				{
+					var reader = new FileReader();
+					console.log(input.files[i].name);
+
+					reader.onload = function(event)
+					{
+						// $($.parseHTML('<div>' + input.files[i].name + '</div>')).appendTo(placeToInsertImagePreview).wrap('<div class="upload-item"></div>');
+						// $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview).wrap('<div class="upload-item"></div>')
+						console.log( event.target);
+						console.log(input.files[i].name);
+					}
+
+					reader.readAsDataURL(input.files[i]);
+				}
+			}
+
+		};
+
+		$('#upload').on('change', function()
+		{
+			sreenshotsPreview(this, '._uploadItems');
+		});
 	}
 }

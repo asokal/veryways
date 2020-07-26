@@ -22,6 +22,7 @@
 @import 'pages/company';
 @import 'pages/services';
 @import 'pages/mission';
+@import 'pages/partner';
 
 a:active
 {
@@ -87,5 +88,59 @@ body
 	@media (max-width: 767px)
 	{
 		width: 100%;
+	}
+}
+
+.message-box
+{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.g-title
+	{
+		margin-bottom: 25px;
+	}
+
+	.g-paragraph
+	{
+		margin-bottom: 58px;
+		max-width: 459px;
+		text-align: center;
+	}
+
+	&--404
+	{
+		.g-title-big
+		{
+			font-size: 150px;
+		}
+
+		.g-paragraph
+		{
+			margin-bottom: 38px;
+		}
+	}
+}
+
+@media (max-width: 767px)
+{
+	.message-box
+	{
+		.g-title
+		{
+			margin-bottom: 20px;
+		}
+
+		&--404
+		{
+			.g-title-big
+			{
+				font-size: 120px;
+			}
+		}
 	}
 }
