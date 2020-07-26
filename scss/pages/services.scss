@@ -116,7 +116,7 @@
 	{
 		flex-direction: column;
 		justify-content: flex-start;
-		padding: 80px 20px 80px 20px;
+		padding: 0 20px;
 	}
 
 	.services__slider
@@ -153,13 +153,17 @@
 		width: 100%;
 		transform: unset;
 		position: static;
-		margin: 0 -15px;
 
 		.slick-track
 		{
 			display: flex;
 			align-items: flex-end;
 			height: 100%;
+		}
+
+		.slick-list
+		{
+			margin: 0 -15px;
 		}
 	}
 

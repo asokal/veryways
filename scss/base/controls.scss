@@ -53,8 +53,10 @@ input[type="text"]::placeholder
 {
 	width: 100%;
 	display: flex;
+	align-items: center;
 	padding: 27px 20px;
 	border: 1px dashed rgba(255, 255, 255, .5);
+	overflow: hidden;
 }
 
 .g-upload__add
@@ -65,6 +67,8 @@ input[type="text"]::placeholder
 	line-height: 1.4;
 	border-bottom: 1px solid #fff;
 	cursor: pointer;
+	margin-right: 36px;
+	flex-shrink: 0;
 }
 
 .g-upload__input
@@ -72,7 +76,60 @@ input[type="text"]::placeholder
 	width: 0;
 	height: 100%;
 	position: absolute;
-	// z-index: -1;
 	opacity: 0;
 	left: 0;
+}
+
+.g-uload__items
+{
+	display: flex;
+}
+
+.g-uload__item
+{
+	@include muller();
+	font-size: 14px;
+	line-height: 1.4;
+	color: rgba(255, 255, 255, .9);
+	position: relative;
+
+	&:not(:last-child)
+	{
+		margin-right: 36px;
+	}
+}
+
+.g-uload__item-delete
+{
+	width: 10px;
+	height: 10px;
+	font-size: 0;
+	position: absolute;
+	right: -16px;
+	top: -3px;
+	cursor: pointer;
+
+	img
+	{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@media (max-width: 767px)
+{
+	.g-upload__add
+	{
+		margin-right: 20px;
+	}
+
+	.g-uload__item
+	{
+		font-size: 12px;
+
+		&:not(:last-child)
+		{
+			margin-right: 26px;
+		}
+	}
 }
