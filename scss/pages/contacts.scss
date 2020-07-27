@@ -90,7 +90,7 @@ a.contacts__link
 		opacity: 0.6;
 		transform: rotate(180deg);
 	}
-	
+
 	iframe
 	{
 		width: 100%;
@@ -117,7 +117,8 @@ a.contacts__link
 	.contacts__info
 	{
 		flex-basis: unset;
-		max-height: calc(50% - 74px);
+		max-height: calc(50% - 78px);
+		height: calc((var(--vh, 1vh) * 100) - 78px); // for mobile bars
 		width: 100%;
 		max-width: 100%;
 		padding: 79px 30px 0 30px;
@@ -135,7 +136,7 @@ a.contacts__link
 	.contacts__map
 	{
 		flex-basis: unset;
-		max-height: 50%;
+		height: calc(var(--vh, 1vh) * 50); // for mobile bars
 		width: 100%;
 		max-width: 100%;
 		order: 1;
@@ -177,7 +178,7 @@ a.contacts__link
 	}
 
 	.contacts__info-top
-	{	
+	{
 		margin-right: 0;
 		margin-bottom: 50px;
 	}
