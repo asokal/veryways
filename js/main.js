@@ -19,12 +19,24 @@ var o2 =
 	*/
 	init()
 	{
+		this.setViewHeight();
 		this.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		$(window).resize(function() {
 			o2.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		});
 		this.sliders.init();
 		this.upload.init();
+	},
+
+	setViewHeight: function()
+	{
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+		$( window ).resize(function() {
+			let vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
+		});
 	},
 
 	toggleNav: function(instance, toggleElem, modifier)

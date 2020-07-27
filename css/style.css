@@ -2284,6 +2284,8 @@ body {
 .wrapper {
   height: -webkit-calc(100vh - 188px);
   height: calc(100vh - 188px);
+  height: -webkit-calc((var(--vh, 1vh) * 100) - 188px);
+  height: calc((var(--vh, 1vh) * 100) - 188px);
   width: 100vw;
   position: fixed;
   top: 102px;
@@ -2384,6 +2386,8 @@ body {
     top: 94px;
     height: -webkit-calc(100vh - 168px);
     height: calc(100vh - 168px);
+    height: -webkit-calc((var(--vh, 1vh) * 100) - 168px);
+    height: calc((var(--vh, 1vh) * 100) - 168px);
   }
 
   .wrapper--full {
@@ -2899,6 +2903,8 @@ body {
     top: 75px;
     height: -webkit-calc(100vh - 153px);
     height: calc(100vh - 153px);
+    height: -webkit-calc((var(--vh, 1vh) * 100) - 153px);
+    height: calc((var(--vh, 1vh) * 100) - 153px);
   }
 
   .wrapper--full {
