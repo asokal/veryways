@@ -2445,8 +2445,8 @@ body {
     flex-basis: unset;
     max-height: -webkit-calc(50% - 78px);
     max-height: calc(50% - 78px);
-    height: -webkit-calc((var(--vh, 1vh) * 100) - 78px);
-    height: calc((var(--vh, 1vh) * 100) - 78px);
+    max-height: -webkit-calc((var(--vh, 1vh) * 50) - 78px);
+    max-height: calc((var(--vh, 1vh) * 50) - 78px);
     width: 100%;
     max-width: 100%;
     padding: 79px 30px 0 30px;
@@ -2466,8 +2466,8 @@ body {
     -ms-flex-preferred-size: unset;
     flex-basis: unset;
     max-height: 50%;
-    height: -webkit-calc(var(--vh, 1vh) * 50);
-    height: calc(var(--vh, 1vh) * 50);
+    max-height: -webkit-calc(var(--vh, 1vh) * 50);
+    max-height: calc(var(--vh, 1vh) * 50);
     width: 100%;
     max-width: 100%;
     -webkit-box-ordinal-group: 2;
@@ -2494,8 +2494,10 @@ body {
   .company__thumb-slider {
     left: -webkit-calc(50% - 53px);
     left: calc(50% - 53px);
-    top: -webkit-calc(50% - 37.5px);
-    top: calc(50% - 37.5px);
+    top: -webkit-calc(50% - 26.5px);
+    top: calc(50% - 26.5px);
+    top: -webkit-calc((var(--vh, 1vh) * 50) - 37.5px);
+    top: calc((var(--vh, 1vh) * 50) - 37.5px);
   }
 
   .services__slider {
@@ -2547,8 +2549,8 @@ body {
     flex-basis: unset;
     max-height: -webkit-calc(50% - 78px);
     max-height: calc(50% - 78px);
-    height: -webkit-calc((var(--vh, 1vh) * 100) - 78px);
-    height: calc((var(--vh, 1vh) * 100) - 78px);
+    max-height: -webkit-calc((var(--vh, 1vh) * 50) - 78px);
+    max-height: calc((var(--vh, 1vh) * 50) - 78px);
     width: 100%;
     max-width: 100%;
     padding: 79px 30px 0 30px;
@@ -2575,8 +2577,9 @@ body {
     -webkit-flex-basis: unset;
     -ms-flex-preferred-size: unset;
     flex-basis: unset;
-    height: -webkit-calc(var(--vh, 1vh) * 50);
-    height: calc(var(--vh, 1vh) * 50);
+    max-height: 50%;
+    max-height: -webkit-calc(var(--vh, 1vh) * 50);
+    max-height: calc(var(--vh, 1vh) * 50);
     width: 100%;
     max-width: 100%;
     -webkit-box-ordinal-group: 2;
@@ -2718,6 +2721,8 @@ body {
     left: calc(50% - 36px);
     top: -webkit-calc(50% - 26.5px);
     top: calc(50% - 26.5px);
+    top: -webkit-calc((var(--vh, 1vh) * 50) - 26.5px);
+    top: calc((var(--vh, 1vh) * 50) - 26.5px);
   }
 
   .services {

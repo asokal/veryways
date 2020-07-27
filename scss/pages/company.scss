@@ -133,7 +133,7 @@
 	{
 		flex-basis: unset;
 		max-height: calc(50% - 78px);
-		height: calc((var(--vh, 1vh) * 100) - 78px); // for mobile bars
+		max-height: calc((var(--vh, 1vh) * 50) - 78px); // for mobile bars
 		width: 100%;
 		max-width: 100%;
 		padding: 79px 30px 0 30px;
@@ -145,7 +145,7 @@
 	{
 		flex-basis: unset;
 		max-height: 50%;
-		height: calc(var(--vh, 1vh) * 50); // for mobile bars
+		max-height: calc(var(--vh, 1vh) * 50); // for mobile bars
 		width: 100%;
 		max-width: 100%;
 		order: 1;
@@ -170,7 +170,8 @@
 	.company__thumb-slider
 	{
 		left: calc(50% - 53px);
-		top: calc(50% - 37.5px);
+		top: calc(50% - 26.5px); // for mobile bars
+		top: calc((var(--vh, 1vh) * 50) - 37.5px); // for mobile bars
 	}
 }
 
@@ -195,6 +196,7 @@
 		height: 51px;
 		position: absolute;
 		left: calc(50% - 36px);
-		top: calc(50% - 26.5px);
+		top: calc(50% - 26.5px); // for mobile bars
+		top: calc((var(--vh, 1vh) * 50) - 26.5px); // for mobile bars
 	}
 }
