@@ -118,7 +118,7 @@ a.contacts__link
 	{
 		flex-basis: unset;
 		max-height: calc(50% - 78px);
-		height: calc((var(--vh, 1vh) * 100) - 78px); // for mobile bars
+		max-height: calc((var(--vh, 1vh) * 50) - 78px); // for mobile bars
 		width: 100%;
 		max-width: 100%;
 		padding: 79px 30px 0 30px;
@@ -136,7 +136,8 @@ a.contacts__link
 	.contacts__map
 	{
 		flex-basis: unset;
-		height: calc(var(--vh, 1vh) * 50); // for mobile bars
+		max-height: 50%;
+		max-height: calc(var(--vh, 1vh) * 50); // for mobile bars
 		width: 100%;
 		max-width: 100%;
 		order: 1;
