@@ -49,9 +49,9 @@ var o2 =
 		});
 
 		if(elemSumWidth > navWidth)
-		$(triggerElem).show();
+			$(triggerElem).show();
 		else
-		$(triggerElem).hide();
+			$(triggerElem).hide();
 	},
 
 	sliders:
@@ -60,6 +60,24 @@ var o2 =
 		{
 			this.companySliders();
 			this.servicesSlider();
+			this.greetingsSlider();
+		},
+
+		greetingsSlider: function()
+		{
+			if($('._greetingsSlider')[0])
+			{
+				$('._greetingsSlider').slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					adaptiveHeight: true,
+					arrows: false,
+					fade: true,
+					rows: 0,
+					autoplay: true,
+					autoplaySpeed: 3000
+				});
+			}
 		},
 
 		companySliders: function()
