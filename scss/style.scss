@@ -99,17 +99,20 @@ body
 	{
 		position: static;
 		height: 100vh;
+		height: calc(var(--vh, 1vh) * 100);
 
 		@media (max-width: 1179px)
 		{
 			top: 94px;
 			height: 100vh;
+			height: calc(var(--vh, 1vh) * 100);
 		}
 
 		@media (max-width: 767px)
 		{
 			top: 75px;
 			height: 100vh;
+			height: calc(var(--vh, 1vh) * 100);
 		}
 	}
 }

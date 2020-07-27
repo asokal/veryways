@@ -2302,6 +2302,8 @@ body {
 .wrapper--full {
   position: static;
   height: 100vh;
+  height: -webkit-calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .message-box {
@@ -2401,6 +2403,8 @@ body {
   .wrapper--full {
     top: 94px;
     height: 100vh;
+    height: -webkit-calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 
@@ -2434,9 +2438,11 @@ body {
   }
 
   .company {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   .company__info {
@@ -2931,6 +2937,8 @@ body {
   .wrapper--full {
     top: 75px;
     height: 100vh;
+    height: -webkit-calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 100);
   }
 
   .message-box {
