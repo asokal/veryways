@@ -23,6 +23,11 @@ input[type="text"]::placeholder
 	color: white;
 }
 
+input[type=text], input[type=submit], textarea
+{
+	-webkit-appearance: none;
+}
+
 .g-input
 {
 	width: 100%;
