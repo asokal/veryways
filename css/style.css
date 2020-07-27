@@ -1672,6 +1672,20 @@ input[type="text"]::placeholder {
   display: none;
 }
 
+.footer--expanded .footer__burger {
+  right: 30px;
+  top: 38px;
+  bottom: unset;
+}
+
+.footer--expanded .footer__burger-close {
+  display: block;
+}
+
+.footer--expanded .footer__burger-open {
+  display: none;
+}
+
 .footer__nav {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1717,6 +1731,10 @@ input[type="text"]::placeholder {
   position: absolute;
   right: 27px;
   bottom: 28px;
+}
+
+.footer__burger-close {
+  display: none;
 }
 
 .greetings {
@@ -2643,6 +2661,11 @@ body {
 
   .footer--expanded .footer__nav-item.active::after {
     display: none;
+  }
+
+  .footer--expanded .footer__burger {
+    top: 27px;
+    right: 20px;
   }
 
   .footer__nav-item {

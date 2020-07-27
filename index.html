@@ -66,9 +66,19 @@
         </div>
     </header>
     <div class="wrapper ">
-        <section class="greetings">
-            <h1 class="g-title-big">Hello</h1>
-        </section>
+        <div class="greetings _greetingsSlider">
+            <div class="greetings__slide">
+                <span class="g-title-big">Hello</span>
+            </div>
+
+            <div class="greetings__slide">
+                <span class="g-title-big">Hola</span>
+            </div>
+
+            <div class="greetings__slide">
+                <span class="g-title-big">Bonjour</span>
+            </div>
+        </div>
     </div>
     <footer class="footer _footer">
         <nav class="footer__nav _footerNav">
@@ -130,7 +140,13 @@
         </nav>
 
         <div class="footer__burger _footerNavTrigger" onclick="o2.toggleNav(this, '._footer', 'footer--expanded')">
-            <img src="./img/language-trigger.svg" alt="">
+            <div class="footer__burger-open">
+                <img src="./img/language-trigger.svg" alt="">
+            </div>
+
+            <div class="footer__burger-close">
+                <img src="./img/closenav.svg" alt="">
+            </div>
         </div>
     </footer>
 </body>
