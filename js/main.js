@@ -25,7 +25,6 @@ var o2 =
 			o2.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		});
 		this.sliders.init();
-		this.upload.init();
 		// this.contactsMap();
 
 		$('body').addClass('ready');
@@ -198,40 +197,28 @@ var o2 =
 
 	upload:
 	{
-		fileArray: [],
+		inputAmount: 1,
 
-		init: function()
+		remove: function(instance)
 		{
-			$('._fileInput').on('change', function() {
-				o2.upload.filePreviews(this, '._uploadItems', '._upload');
-			});
+			$('#fileInput' + $(instance).attr('data-remove-id')).remove();
+			$(instance).parent().remove();
 		},
 
-		filePreviews: function(input, itemsWrap, directWrap)
+		create: function(instance)
 		{
+			this.inputAmount++
 
-			if (input.files)
-			{
-				var filesAmount = input.files.length;
+			$('._uploadAdd').append('<input type="file" name="uploads[]" class="g-upload__input" onchange="o2.upload.create(this);" id="fileInput' + o2.upload.inputAmount + '">');
 
-				for (i = 0; i < filesAmount; i++)
-				{
-					var reader = new FileReader();
+			$('._uploadAdd').attr('for', 'fileInput' + this.inputAmount);
 
-					$($.parseHTML('<div class="g-uload__item _uploadItem">' + input.files[i].name + '</div>')).appendTo(itemsWrap);
+			$('._uploadItems').append(
+				'<div class="g-uload__item">' + 
+					instance.files[0].name +
+					'<div class="g-uload__item-remove" data-remove-id="' + o2.upload.inputAmount + '" onclick="o2.upload.remove(this);"><img src="./img/close.svg" alt=""></div>' +
+				'</div>');
 
-					$($.parseHTML('<div class="g-uload__clear _uploadClear" onclick="o2.upload.clearFiles();"><img src="assets/template/img/close.svg" alt=""></div>')).appendTo(directWrap);
-
-					reader.readAsDataURL(input.files[i]);
-				}
-			}
-		},
-
-		clearFiles: function()
-		{
-			$('._fileInput')[0].value = "";
-			$('._uploadItem').remove();
-			$('._uploadClear').remove();
 		}
 	}
 }
