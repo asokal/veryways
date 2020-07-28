@@ -37,7 +37,6 @@ var jsFiles = [
 	'js/vendors/jquery-3.4.1.min.js',
 	'js/vendors/slick.js',
 	'js/vendors/simplebar.min.js',
-	'js/vendors/jquery.filer.js',
 	'js/main.js'
 ];
 

@@ -1365,6 +1365,7 @@ textarea {
   font-size: 14px;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.9);
+  position: relative;
 }
 
 .g-uload__item:not(:last-child) {
@@ -2206,6 +2207,10 @@ a.contacts__link {
 
 .contacts__map iframe {
   width: 100%;
+  height: 100%;
+}
+
+.contacts__map #map {
   height: 100%;
 }
 
