@@ -55,6 +55,20 @@ body
 {
 	min-width: 320px;
 	@include gradient-bg;
+
+	.header, .footer, .wrapper
+	{
+		opacity: 0;
+		transition: opacity .3s;
+	}
+
+	&.ready
+	{
+		.header, .footer, .wrapper
+		{
+			opacity: 1;
+		}
+	}
 }
 
 @keyframes gradient
@@ -63,10 +77,12 @@ body
 	{
 		background-position: 0% 50%;
 	}
+
 	50%
 	{
 		background-position: 100% 50%;
 	}
+
 	100%
 	{
 		background-position: 0% 50%;

@@ -8,7 +8,6 @@
 		url('../fonts/MullerLight.svg#MullerLight') format('svg');
 	font-weight: 300;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
@@ -21,7 +20,6 @@
 		url('../fonts/MullerThinItalic.svg#MullerThinItalic') format('svg');
 	font-weight: 100;
 	font-style: italic;
-	font-display: swap;
 }
 
 @font-face {
@@ -34,7 +32,6 @@
 		url('../fonts/MullerBlackItalic.svg#MullerBlackItalic') format('svg');
 	font-weight: 900;
 	font-style: italic;
-	font-display: swap;
 }
 
 @font-face {
@@ -47,7 +44,6 @@
 		url('../fonts/MullerRegularItalic.svg#MullerRegularItalic') format('svg');
 	font-weight: normal;
 	font-style: italic;
-	font-display: swap;
 }
 
 @font-face {
@@ -60,7 +56,6 @@
 		url('../fonts/MullerThin.svg#MullerThin') format('svg');
 	font-weight: 100;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
@@ -73,7 +68,6 @@
 		url('../fonts/MullerBlack.svg#MullerBlack') format('svg');
 	font-weight: 900;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
@@ -86,7 +80,6 @@
 		url('../fonts/MullerMedium.svg#MullerMedium') format('svg');
 	font-weight: 500;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
@@ -99,7 +92,6 @@
 		url('../fonts/MullerBoldItalic.svg#MullerBoldItalic') format('svg');
 	font-weight: bold;
 	font-style: italic;
-	font-display: swap;
 }
 
 @font-face {
@@ -112,7 +104,6 @@
 		url('../fonts/MullerExtraBoldItalic.svg#MullerExtraBoldItalic') format('svg');
 	font-weight: 800;
 	font-style: italic;
-	font-display: swap;
 }
 
 @font-face {
@@ -125,7 +116,6 @@
 		url('../fonts/MullerHeavy.svg#MullerHeavy') format('svg');
 	font-weight: 900;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
@@ -138,7 +128,6 @@
 		url('../fonts/MullerUltraLightItalic.svg#MullerUltraLightItalic') format('svg');
 	font-weight: 200;
 	font-style: italic;
-	font-display: swap;
 }
 
 @font-face {
@@ -151,7 +140,6 @@
 		url('../fonts/MullerMediumItalic.svg#MullerMediumItalic') format('svg');
 	font-weight: 500;
 	font-style: italic;
-	font-display: swap;
 }
 
 @font-face {
@@ -164,7 +152,6 @@
 		url('../fonts/MullerExtraBold.svg#MullerExtraBold') format('svg');
 	font-weight: 800;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
@@ -177,7 +164,6 @@
 		url('../fonts/MullerLightItalic.svg#MullerLightItalic') format('svg');
 	font-weight: 300;
 	font-style: italic;
-	font-display: swap;
 }
 
 @font-face {
@@ -190,7 +176,6 @@
 		url('../fonts/MullerHeavyItalic.svg#MullerHeavyItalic') format('svg');
 	font-weight: 900;
 	font-style: italic;
-	font-display: swap;
 }
 
 @font-face {
@@ -203,7 +188,6 @@
 		url('../fonts/MullerBold.svg#MullerBold') format('svg');
 	font-weight: bold;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
@@ -216,7 +200,6 @@
 		url('../fonts/MullerUltraLight.svg#MullerUltraLight') format('svg');
 	font-weight: 200;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
@@ -229,7 +212,6 @@
 		url('../fonts/MullerRegular.svg#MullerRegular') format('svg');
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap;
 }
 
 @mixin muller($weight: normal, $style: normal)
