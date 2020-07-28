@@ -1313,6 +1313,7 @@ textarea {
 
 .g-upload {
   width: 100%;
+  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1321,25 +1322,27 @@ textarea {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 27px 20px;
+  padding: 0 20px;
   border: 1px dashed rgba(255, 255, 255, 0.5);
   overflow: hidden;
-  position: relative;
 }
 
 .g-upload__add {
   position: relative;
+  cursor: pointer;
+  margin-right: 36px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.g-upload__add span {
   font-family: 'Muller';
   font-weight: 500;
   font-style: normal;
   font-size: 16px;
   line-height: 1.4;
   border-bottom: 1px solid #fff;
-  cursor: pointer;
-  margin-right: 36px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
 }
 
 .g-upload__input {
@@ -1355,6 +1358,13 @@ textarea {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -1366,23 +1376,24 @@ textarea {
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.9);
   position: relative;
+  white-space: nowrap;
 }
 
 .g-uload__item:not(:last-child) {
   margin-right: 36px;
 }
 
-.g-uload__clear {
+.g-uload__item-remove {
   width: 10px;
   height: 10px;
   font-size: 0;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  right: -16px;
+  top: -3px;
   cursor: pointer;
 }
 
-.g-uload__clear img {
+.g-uload__item-remove img {
   width: 100%;
   height: 100%;
 }
