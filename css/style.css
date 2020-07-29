@@ -2217,6 +2217,10 @@ a.contacts__link {
   height: 100%;
 }
 
+.contacts__map #map {
+  height: 100%;
+}
+
 .contacts-map {
   height: 100%;
   width: 100%;
