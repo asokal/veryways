@@ -32,11 +32,11 @@ var o2 =
 
 	setViewHeight: function()
 	{
-		let vh = window.innerHeight * 0.01;
+		var vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 		$( window ).resize(function() {
-			let vh = window.innerHeight * 0.01;
+			var vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		});
 	},
@@ -70,7 +70,7 @@ var o2 =
 
 	contactsMap: function()
 	{
-		let map;
+		var map;
 
 		function initMap()
 		{
