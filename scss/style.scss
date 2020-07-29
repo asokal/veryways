@@ -89,6 +89,24 @@ body
 	}
 }
 
+@keyframes fadeInOut
+{
+	0%
+	{
+		opacity: 0;
+	}
+
+	20%, 80%
+	{
+		opacity: 1;
+	}
+
+	100%
+	{
+		opacity: 0;
+	}
+}
+
 .wrapper
 {
 	height: calc(100vh - 188px);

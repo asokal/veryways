@@ -6,3 +6,11 @@
 	justify-content: center;
 	text-align: center;
 }
+
+.greetings__slide
+{
+	&.slick-current
+	{
+		animation: fadeInOut 4s linear;
+	}
+}
