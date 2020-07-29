@@ -25,7 +25,6 @@ var o2 =
 			o2.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		});
 		this.sliders.init();
-		this.contactsMap();
 
 		$('body').addClass('ready');
 	},
@@ -66,19 +65,6 @@ var o2 =
 			$(triggerElem).show();
 		else
 			$(triggerElem).hide();
-	},
-
-	contactsMap: function()
-	{
-		var map;
-
-		function initMap()
-		{
-			map = new google.maps.Map(document.getElementById("map"), {
-				center: { lat: 55.7316838, lng: 37.8238235 },
-				zoom: 8
-			});
-		}
 	},
 
 	sliders:
@@ -163,8 +149,6 @@ var o2 =
 					fade: true,
 					rows: 0,
 					asNavFor: '._servicesDotsSlider',
-					autoplay: true,
-					autoplaySpeed: 5000
 				});
 
 				$servicesDotsSlider.slick({
@@ -176,8 +160,6 @@ var o2 =
 					slidesToScroll: 1,
 					focusOnSelect: true,
 					asNavFor: '._servicesSlider',
-					autoplay: true,
-					autoplaySpeed: 5000
 				});
 
 				$('body').on('wheel', (function(e) {
