@@ -25,7 +25,7 @@ var o2 =
 			o2.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		});
 		this.sliders.init();
-		// this.contactsMap();
+		this.contactsMap();
 
 		$('body').addClass('ready');
 	},
@@ -70,12 +70,15 @@ var o2 =
 
 	contactsMap: function()
 	{
-		var map = new google.maps.Map(document.getElementById("map"), {
-			center: { lat: 55.7316838, lng: 37.8238235 },
-			zoom: 8
-		});
+		let map;
 
-		return map();
+		function initMap()
+		{
+			map = new google.maps.Map(document.getElementById("map"), {
+				center: { lat: 55.7316838, lng: 37.8238235 },
+				zoom: 8
+			});
+		}
 	},
 
 	sliders:
