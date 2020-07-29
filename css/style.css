@@ -1633,7 +1633,7 @@ textarea {
 }
 
 .footer--expanded .footer__nav-item {
-  font-size: 26px;
+  font-size: 32px;
   margin-bottom: 40px;
   margin-right: 0;
   display: block !important;
@@ -1642,26 +1642,6 @@ textarea {
 .footer--expanded .footer__nav-item:last-child {
   margin-right: 0;
   margin-bottom: 0;
-}
-
-.footer--expanded .footer__nav-item:nth-child(1),
-.footer--expanded .footer__nav-item:nth-last-child(1) {
-  font-size: 14px;
-}
-
-.footer--expanded .footer__nav-item:nth-child(2),
-.footer--expanded .footer__nav-item:nth-last-child(2) {
-  font-size: 16px;
-}
-
-.footer--expanded .footer__nav-item:nth-child(3),
-.footer--expanded .footer__nav-item:nth-last-child(3) {
-  font-size: 18px;
-}
-
-.footer--expanded .footer__nav-item:nth-child(4),
-.footer--expanded .footer__nav-item:nth-last-child(4) {
-  font-size: 20px;
 }
 
 .footer--expanded .footer__nav-item.active {
@@ -1691,6 +1671,10 @@ textarea {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .footer__nav-item {
@@ -1704,7 +1688,7 @@ textarea {
 }
 
 .footer__nav-item:last-child {
-  margin-right: 20px;
+  margin-right: 0px;
 }
 
 .footer__nav-item.active {
@@ -2669,32 +2653,13 @@ body.ready .wrapper {
   }
 
   .footer--expanded .footer__nav-item {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 20px;
   }
 
   .footer--expanded .footer__nav-item:last-child {
     margin-right: 0;
     margin-bottom: 0;
-  }
-
-  .footer--expanded .footer__nav-item:nth-child(1),
-  .footer--expanded .footer__nav-item:nth-last-child(1),
-  .footer--expanded .footer__nav-item:nth-child(2),
-  .footer--expanded .footer__nav-item:nth-last-child(2),
-  .footer--expanded .footer__nav-item:nth-child(3),
-  .footer--expanded .footer__nav-item:nth-last-child(3) {
-    font-size: 12px;
-  }
-
-  .footer--expanded .footer__nav-item:nth-child(4),
-  .footer--expanded .footer__nav-item:nth-last-child(4) {
-    font-size: 14px;
-  }
-
-  .footer--expanded .footer__nav-item:nth-child(5),
-  .footer--expanded .footer__nav-item:nth-last-child(5) {
-    font-size: 16px;
   }
 
   .footer--expanded .footer__nav-item.active {
