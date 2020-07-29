@@ -96,11 +96,16 @@ var o2 =
 					slidesToScroll: 1,
 					adaptiveHeight: true,
 					arrows: false,
-					fade: true,
 					rows: 0,
 					autoplay: true,
-					autoplaySpeed: 3000
+					autoplaySpeed: 4000,
+					pauseOnFocus: false,
+					pauseOnHover: false,
+					fade: true,
+					speed: 0,
 				});
+
+				$('._greetingsSlider')[0].slick.cssTransitions = false;
 			}
 		},
 
@@ -214,7 +219,7 @@ var o2 =
 			$('._uploadAdd').attr('for', 'fileInput' + this.inputAmount);
 
 			$('._uploadItems').append(
-				'<div class="g-uload__item">' + 
+				'<div class="g-uload__item">' +
 					instance.files[0].name +
 					'<div class="g-uload__item-remove" data-remove-id="' + o2.upload.inputAmount + '" onclick="o2.upload.remove(this);"><img src="assets/template/img/close.svg" alt=""></div>' +
 				'</div>');

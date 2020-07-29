@@ -1738,6 +1738,11 @@ textarea {
   text-align: center;
 }
 
+.greetings__slide.slick-current {
+  -webkit-animation: fadeInOut 4s linear;
+  animation: fadeInOut 4s linear;
+}
+
 .company {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2283,6 +2288,34 @@ body.ready .wrapper {
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  20%, 80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  20%, 80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
