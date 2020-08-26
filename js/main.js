@@ -25,18 +25,17 @@ var o2 =
 			o2.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		});
 		this.sliders.init();
-		// this.contactsMap();
 
 		$('body').addClass('ready');
 	},
 
 	setViewHeight: function()
 	{
-		let vh = window.innerHeight * 0.01;
+		var vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 		$( window ).resize(function() {
-			let vh = window.innerHeight * 0.01;
+			var vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		});
 	},
@@ -66,16 +65,6 @@ var o2 =
 			$(triggerElem).show();
 		else
 			$(triggerElem).hide();
-	},
-
-	contactsMap: function()
-	{
-		var map = new google.maps.Map(document.getElementById("map"), {
-			center: { lat: 55.7316838, lng: 37.8238235 },
-			zoom: 8
-		});
-
-		return map();
 	},
 
 	sliders:
@@ -160,8 +149,6 @@ var o2 =
 					fade: true,
 					rows: 0,
 					asNavFor: '._servicesDotsSlider',
-					autoplay: true,
-					autoplaySpeed: 5000
 				});
 
 				$servicesDotsSlider.slick({
@@ -173,8 +160,6 @@ var o2 =
 					slidesToScroll: 1,
 					focusOnSelect: true,
 					asNavFor: '._servicesSlider',
-					autoplay: true,
-					autoplaySpeed: 5000
 				});
 
 				$('body').on('wheel', (function(e) {
@@ -220,7 +205,7 @@ var o2 =
 
 			$('._uploadItems').append(
 				'<div class="g-uload__item">' +
-					instance.files[0].name +
+					'<div class="g-uload__item-name">' + instance.files[0].name + '</div>' +
 					'<div class="g-uload__item-remove" data-remove-id="' + o2.upload.inputAmount + '" onclick="o2.upload.remove(this);"><img src="assets/template/img/close.svg" alt=""></div>' +
 				'</div>');
 

@@ -1313,16 +1313,11 @@ textarea {
 
 .g-upload {
   width: 100%;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 20px;
+  padding: 20px 20px 0;
   border: 1px dashed rgba(255, 255, 255, 0.5);
   overflow: hidden;
 }
@@ -1334,6 +1329,7 @@ textarea {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  padding-bottom: 20px;
 }
 
 .g-upload__add span {
@@ -1358,29 +1354,33 @@ textarea {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   max-width: 100%;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .g-uload__item {
+  position: relative;
+  margin-bottom: 20px;
+  margin-right: 36px;
+}
+
+.g-uload__item-name {
+  white-space: nowrap;
   font-family: 'Muller';
   font-weight: normal;
   font-style: normal;
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.7;
   color: rgba(255, 255, 255, 0.9);
-  position: relative;
-  white-space: nowrap;
-}
-
-.g-uload__item:not(:last-child) {
-  margin-right: 36px;
+  display: block;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  max-width: 55px;
 }
 
 .g-uload__item-remove {
@@ -2214,6 +2214,11 @@ a.contacts__link {
   height: 100%;
 }
 
+.contacts-map {
+  height: 100%;
+  width: 100%;
+}
+
 a:active {
   color: inherit;
 }
@@ -2654,11 +2659,11 @@ body.ready .wrapper {
   }
 
   .g-uload__item {
-    font-size: 12px;
+    margin-right: 25px;
   }
 
-  .g-uload__item:not(:last-child) {
-    margin-right: 26px;
+  .g-uload__item-name {
+    font-size: 12px;
   }
 
   .header {
