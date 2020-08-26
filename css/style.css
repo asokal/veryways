@@ -2495,6 +2495,7 @@ body.ready .wrapper {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    overflow-y: auto;
   }
 
   .company__slider {
@@ -2602,6 +2603,7 @@ body.ready .wrapper {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    overflow-y: auto;
   }
 
   .contacts__info-top {
@@ -2911,7 +2913,6 @@ body.ready .wrapper {
     display: block;
     padding: 50px 20px 0 20px;
     font-size: 18px;
-    overflow-y: scroll;
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
