@@ -130,6 +130,7 @@ a.contacts__link
 		order: 2;
 		display: flex;
 		justify-content: space-between;
+		overflow-y: auto;
 	}
 
 	.contacts__info-top
@@ -179,7 +180,6 @@ a.contacts__link
 		display: block;
 		padding: 50px 20px 0 20px;
 		font-size: 18px;
-		overflow-y: scroll;
 		justify-content: flex-start;
 	}
 
