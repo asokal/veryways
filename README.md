@@ -1,6 +1,6 @@
-# [VeryWays](https://xn--j1aawi.xn--p1ai/)
+# [VeryWays](https://veryways.com/)
 
-Frontend для [VeryWays.com](https://xn--j1aawi.xn--p1ai/)
+Frontend для [VeryWays.com](https://veryways.com/)
 
 Сборщик Gulp, шаблонизатор Twig, препроцессор SCSS, библиотека JQuery.
 
