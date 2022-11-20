@@ -1,18 +1,16 @@
-var gulp             = require('gulp'),
-	sass             = require('gulp-sass');
+const gulp           = require('gulp'),
+	sass             = require('gulp-sass'),
 	browserSync      = require('browser-sync'),
 	concat           = require('gulp-concat'),
-	uglify           = require('gulp-uglify')
+	uglify           = require('gulp-uglify'),
 	cssnano          = require('gulp-cssnano'),
 	rename           = require('gulp-rename'),
 	del              = require('del'),
 	imagemin         = require('gulp-imagemin'),
-	// pngquant         = require('imagemin-pngquant'),
 	cache            = require('gulp-cache'),
 	autoprefixer     = require('gulp-autoprefixer'),
 	babel            = require('gulp-babel'),
 	imageminZopfli   = require('imagemin-zopfli'),
-	// imageminMozjpeg  = require('imagemin-mozjpeg'),
 	imageminGiflossy = require('imagemin-giflossy'),
 	plumber          = require('gulp-plumber'),
 	twig             = require('gulp-twig'),
@@ -33,7 +31,7 @@ gulp.task('sass', () => {
 });
 
 // файлы для сборки
-var jsFiles = [
+const jsFiles = [
 	'js/vendors/jquery-3.4.1.min.js',
 	'js/vendors/slick.js',
 	'js/vendors/simplebar.min.js',
@@ -67,7 +65,7 @@ gulp.task('scripts-build', () => {
 
 // приводим впорядок скомпилированный код
 gulp.task('htmlbeautify', () => {
-	var options = {
+	const options = {
 		indentSize: 4,
 		unformatted: [
 			// https://www.w3.org/TR/html5/dom.html#phrasing-content
@@ -86,7 +84,7 @@ gulp.task('htmlbeautify', () => {
 		.pipe(gulp.dest('./'));
 });
 
-gulp.task('twig', function () {
+gulp.task('twig', () => {
 	return gulp.src(['./src/*.twig'])
 	// Stay live and reload on error
 	.pipe(plumber())
@@ -114,7 +112,7 @@ gulp.task('browser-sync', () => {
 });
 
 // таск следит за изменениями файлов и вызывает другие таски
-gulp.task('watch', function() {
+gulp.task('watch', () => {
 	gulp.watch('scss/**/*.scss', gulp.parallel('sass'));
 	gulp.watch('src/**/*.twig', gulp.parallel('twig'));
 	gulp.watch(['js/vendors/*.js', 'js/*.js', '!js/main.min.js', 'js/modules/*.js'], gulp.parallel('scripts'));
