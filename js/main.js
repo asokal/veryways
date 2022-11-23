@@ -12,7 +12,7 @@ $(document).ready(function()
 * основной объект
 * @type {object}
 */
-var o2 =
+const o2 =
 {
 	/**
 	* вызов функций, которые должны запускаться при загрузке страницы
@@ -29,36 +29,36 @@ var o2 =
 		$('body').addClass('ready');
 	},
 
-	setViewHeight: function()
+	setViewHeight()
 	{
-		var vh = window.innerHeight * 0.01;
+		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 		$( window ).resize(function() {
-			var vh = window.innerHeight * 0.01;
+			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		});
 	},
 
-	toggleNav: function(instance, toggleElem, modifier)
+	toggleNav(instance, toggleElem, modifier)
 	{
 		$(instance).toggleClass('active');
 		$(toggleElem).toggleClass(modifier);
 	},
 
-	priorityNav: function(navElem, navItemElem, triggerElem)
+	priorityNav(navElem, navItemElem, triggerElem)
 	{
-		var navWidth = $(navElem).width(),
-		elemSumWidth = 0;
+		let navWidth = $(navElem).width(),
+			elemSumWidth = 0;
 
 		$(navItemElem).each(function()
 		{
 			elemSumWidth = elemSumWidth + $(this).outerWidth(true);
 
 			if(elemSumWidth > navWidth)
-			$(this).hide();
+				$(this).hide();
 			else
-			$(this).show();
+				$(this).show();
 		});
 
 		if(elemSumWidth > navWidth)
@@ -69,14 +69,14 @@ var o2 =
 
 	sliders:
 	{
-		init: function()
+		init()
 		{
 			this.companySliders();
 			this.servicesSlider();
 			this.greetingsSlider();
 		},
 
-		greetingsSlider: function()
+		greetingsSlider()
 		{
 			if($('._greetingsSlider')[0])
 			{
@@ -98,12 +98,12 @@ var o2 =
 			}
 		},
 
-		companySliders: function()
+		companySliders()
 		{
 			if($('._companySlider')[0])
 			{
-				var $companySlider = $('._companySlider'),
-				$companyThumbSlider = $('._companyThumbSlider');
+				const $companySlider = $('._companySlider'),
+					  $companyThumbSlider = $('._companyThumbSlider');
 
 				$companySlider.slick({
 					slidesToShow: 1,
@@ -133,14 +133,14 @@ var o2 =
 			}
 		},
 
-		servicesSlider: function()
+		servicesSlider()
 		{
 			if($('._servicesSlider')[0])
 			{
-				var $servicesSlider = $('._servicesSlider'),
-				$servicesDotsSlider = $('._servicesDotsSlider'),
-				scrollCount = null;
-				scroll= null;
+				let $servicesSlider = $('._servicesSlider'),
+					$servicesDotsSlider = $('._servicesDotsSlider'),
+					scrollCount = null;
+					scroll = null;
 
 				$servicesSlider.slick({
 					slidesToShow: 1,
@@ -166,15 +166,16 @@ var o2 =
 					clearTimeout(scroll);
 
 					scroll = setTimeout(function(){scrollCount=0;}, 200);
+
 					if(scrollCount)
-					return 0;
+						return 0;
 
 					scrollCount = 1;
 
 					if (e.originalEvent.deltaY > 0)
-					$($servicesSlider).slick('slickNext');
+						$($servicesSlider).slick('slickNext');
 					else
-					$($servicesSlider).slick('slickPrev');
+						$($servicesSlider).slick('slickPrev');
 				}));
 
 				$servicesSlider.click(function() {
@@ -189,13 +190,13 @@ var o2 =
 	{
 		inputAmount: 1,
 
-		remove: function(instance)
+		remove(instance)
 		{
 			$('#fileInput' + $(instance).attr('data-remove-id')).remove();
 			$(instance).parent().remove();
 		},
 
-		create: function(instance)
+		create(instance)
 		{
 			this.inputAmount++
 
