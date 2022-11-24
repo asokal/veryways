@@ -5,14 +5,14 @@
 */
 $(document).ready(function()
 {
-	o2.init();
+	global.init();
 });
 
 /**
 * основной объект
 * @type {object}
 */
-const o2 =
+const global =
 {
 	/**
 	* вызов функций, которые должны запускаться при загрузке страницы
@@ -22,7 +22,7 @@ const o2 =
 		this.setViewHeight();
 		this.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		$(window).resize(function() {
-			o2.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
+			global.priorityNav('._footerNav', '._footerNavItem', '._footerNavTrigger');
 		});
 		this.sliders.init();
 
@@ -200,14 +200,14 @@ const o2 =
 		{
 			this.inputAmount++
 
-			$('._uploadAdd').append('<input type="file" name="uploads[]" class="g-upload__input" onchange="o2.upload.create(this);" id="fileInput' + o2.upload.inputAmount + '">');
+			$('._uploadAdd').append('<input type="file" name="uploads[]" class="g-upload__input" onchange="global.upload.create(this);" id="fileInput' + global.upload.inputAmount + '">');
 
 			$('._uploadAdd').attr('for', 'fileInput' + this.inputAmount);
 
 			$('._uploadItems').append(
 				'<div class="g-uload__item">' +
 					'<div class="g-uload__item-name">' + instance.files[0].name + '</div>' +
-					'<div class="g-uload__item-remove" data-remove-id="' + o2.upload.inputAmount + '" onclick="o2.upload.remove(this);"><img src="./img/close.svg" alt=""></div>' +
+					'<div class="g-uload__item-remove" data-remove-id="' + global.upload.inputAmount + '" onclick="global.upload.remove(this);"><img src="./img/close.svg" alt=""></div>' +
 				'</div>');
 
 		}
