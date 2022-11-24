@@ -192,7 +192,7 @@ const global =
 
 		remove(instance)
 		{
-			$('#fileInput' + $(instance).attr('data-remove-id')).remove();
+			$(`#fileInput${$(instance).attr('data-remove-id')}`).remove();
 			$(instance).parent().remove();
 		},
 
@@ -200,15 +200,16 @@ const global =
 		{
 			this.inputAmount++
 
-			$('._uploadAdd').append('<input type="file" name="uploads[]" class="g-upload__input" onchange="global.upload.create(this);" id="fileInput' + global.upload.inputAmount + '">');
+			$('._uploadAdd').append(`<input type="file" name="uploads[]" class="g-upload__input" onchange="global.upload.create(this);" id="fileInput${global.upload.inputAmount}">`);
 
-			$('._uploadAdd').attr('for', 'fileInput' + this.inputAmount);
+			$('._uploadAdd').attr('for', `fileInput${this.inputAmount}`);
 
-			$('._uploadItems').append(
-				'<div class="g-uload__item">' +
-					'<div class="g-uload__item-name">' + instance.files[0].name + '</div>' +
-					'<div class="g-uload__item-remove" data-remove-id="' + global.upload.inputAmount + '" onclick="global.upload.remove(this);"><img src="./img/close.svg" alt=""></div>' +
-				'</div>');
+			$('._uploadItems').append(`
+				<div class="g-uload__item">
+					<div class="g-uload__item-name">${instance.files[0].name}</div>
+					<div class="g-uload__item-remove" data-remove-id="${global.upload.inputAmount}" onclick="global.upload.remove(this);"><img src="./img/close.svg" alt=""></div>
+				</div>
+			`);
 
 		}
 	}
