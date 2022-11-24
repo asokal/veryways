@@ -59,7 +59,7 @@
             </a>
         </nav>
 
-        <div onclick="o2.toggleNav(this, '._header', 'header--expanded')" class="header__burger">
+        <div onclick="global.toggleNav(this, '._header', 'header--expanded')" class="header__burger">
             <span></span>
             <span></span>
             <span></span>
@@ -93,7 +93,7 @@
                     <div class="g-upload _upload">
                         <label for="fileInput" class="g-upload__add _uploadAdd">
                             <span>Add file</span>
-                            <input type="file" name="uploads[]" class="g-upload__input" onchange="o2.upload.create(this);" id="fileInput">
+                            <input type="file" name="uploads[]" class="g-upload__input" onchange="global.upload.create(this);" id="fileInput">
                         </label>
 
                         <div class="g-uload__items _uploadItems">
@@ -166,7 +166,7 @@
             </a>
         </nav>
 
-        <div class="footer__burger _footerNavTrigger" onclick="o2.toggleNav(this, '._footer', 'footer--expanded')">
+        <div class="footer__burger _footerNavTrigger" onclick="global.toggleNav(this, '._footer', 'footer--expanded')">
             <div class="footer__burger-open">
                 <img src="./img/language-trigger.svg" alt="">
             </div>
