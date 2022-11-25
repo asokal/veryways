@@ -33,9 +33,9 @@
 </head>
 <body>
 	{% include "../blocks/header.twig" %}
-	<div class="wrapper {% if wrapperFull == true %}wrapper--full{% endif %}">
+	<main class="wrapper {% if wrapperFull == true %}wrapper--full{% endif %}">
 		{% block page %}{% endblock %}
-	</div>
+	</main>
 	{% include "../blocks/footer.twig" %}
 </body>
 </html>
