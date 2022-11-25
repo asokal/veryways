@@ -1,29 +1,25 @@
 {% block header %}
 <header class="header _header">
-	<a href="#" class="header__logo">
+	<a href="./index.html" class="header__logo">
 		<img src="./img/logo.png" alt="">
 	</a>
 
+	{%
+		set pages = [
+			{name: "Company", link: "company"},
+			{name: "What we do?", link: "what-we-do"},
+			{name: "Mission", link: "mission"},
+			{name: "Contacts", link: "contacts"},
+			{name: "Become a Partner", link: "become-a-partner"},
+		]
+	%}
+
 	<nav class="header__nav">
-		<a href="#" class="header__nav-item">
-			Company
-		</a>
-
-		<a href="#" class="header__nav-item active">
-			What we do?
-		</a>
-
-		<a href="#" class="header__nav-item">
-			Mission
-		</a>
-
-		<a href="#" class="header__nav-item">
-			Contacts
-		</a>
-
-		<a href="#" class="header__nav-item">
-			Become a Partner
-		</a>
+		{% for page in pages %}
+			<a href="./{{page.link}}.html" class="header__nav-item {% if page.name == currentPage %}active{% endif %}">
+				{{page.name}}
+			</a>
+		{% endfor %}
 	</nav>
 
 	<div onclick="global.toggleNav(this, '._header', 'header--expanded')" class="header__burger">
