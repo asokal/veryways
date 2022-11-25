@@ -1,61 +1,19 @@
 {% block footer %}
 <footer class="footer _footer">
+	{%
+		set languages = ['France', 'Deutsch', 'Ελληνικά', 'Italiano', 'Español', 'Português', 'Türkçe', '한국어', '日本語', 'हिन्दी', 'תירבע', '中文简体', 'العربية']
+	%}
+
 	<nav class="footer__nav _footerNav">
-		<a href="#" class="footer__nav-item _footerNavItem">
-			العربية
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			中文简体
-		</a>
-
 		<a href="#" class="footer__nav-item _footerNavItem active">
 			English
 		</a>
 
-		<a href="#" class="footer__nav-item _footerNavItem">
-			Français
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			Deutsch
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			Ελληνικά
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			תירבע
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			हिन्दी
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			Italiano
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			Español
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			Português
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			Türkçe
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			한국어
-		</a>
-
-		<a href="#" class="footer__nav-item _footerNavItem">
-			日本語
-		</a>
+		{% for language in languages %}
+			<a href="#" class="footer__nav-item _footerNavItem">
+				{{language}}
+			</a>
+		{% endfor %}
 	</nav>
 
 	<div class="footer__burger _footerNavTrigger" onclick="global.toggleNav(this, '._footer', 'footer--expanded')">
