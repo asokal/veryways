@@ -15,7 +15,7 @@ $(document).ready(function()
 const global =
 {
 	/**
-	* вызов функций, которые должны запускаться при загрузке страницы
+	* вызов функций, которые должны запускаться после загрузки DOM
 	*/
 	init()
 	{
@@ -28,24 +28,36 @@ const global =
 
 		$('body').addClass('ready');
 	},
-
+	/**
+	 * для корректной высоты wrapper на мобильных браузерах
+	 */
 	setViewHeight()
 	{
 		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-		$( window ).resize(function() {
+		$(window).resize(function() {
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		});
 	},
-
+	/**
+	 * переключение адаптивных навигаций
+	 * @param {object} instance - объект this
+	 * @param {string} toggleElem - модифицируемый блок
+	 * @param {string} modifier - имя класса-модификатора
+	 */
 	toggleNav(instance, toggleElem, modifier)
 	{
 		$(instance).toggleClass('active');
 		$(toggleElem).toggleClass(modifier);
 	},
-
+	/**
+	 * адаптивное отображение навигации языков
+	 * @param {string} navElem - имя класса блока навигации
+	 * @param {string} navItemElem - имя классов элементов навигации
+	 * @param {string} triggerElem - имя класса переключателя
+	 */
 	priorityNav(navElem, navItemElem, triggerElem)
 	{
 		let navWidth = $(navElem).width(),
@@ -66,16 +78,24 @@ const global =
 		else
 			$(triggerElem).hide();
 	},
-
+	/**
+	 * все слайдеры/карусели. Библиотека "slick"
+	 * @type {object}
+	 */
 	sliders:
 	{
+		/**
+		 * инициализация
+		 */
 		init()
 		{
 			this.companySliders();
 			this.servicesSlider();
 			this.greetingsSlider();
 		},
-
+		/**
+		 * Слайдер приветствий(главная страница)
+		 */
 		greetingsSlider()
 		{
 			if($('._greetingsSlider')[0])
@@ -97,7 +117,9 @@ const global =
 				$('._greetingsSlider')[0].slick.cssTransitions = false;
 			}
 		},
-
+		/**
+		 * Слайдер на странице company. Два связанных вместе слайдера - отображаемая фотография и превью следующей, на которую можно кликнуть.
+		 */
 		companySliders()
 		{
 			if($('._companySlider')[0])
@@ -132,7 +154,9 @@ const global =
 				});
 			}
 		},
-
+		/**
+		 * Слайдер услуг на странице "What we do". Два связанных вместе слайдера - основной и кликабельная навигация
+		 */
 		servicesSlider()
 		{
 			if($('._servicesSlider')[0])
@@ -185,18 +209,27 @@ const global =
 			}
 		}
 	},
-
+	/**
+	 * кастомная загрузка файлов
+	 * @type {object}
+	 */
 	upload:
 	{
 		inputAmount: 1,
-
+		/**
+		 * удаление выбранного файла
+		 * @param {object} instance - объект this
+		 */
 		remove(instance)
 		{
 			$(`#fileInput-${$(instance).attr('data-remove-id')}`).remove();
 			$(instance).parent().remove();
 			$('._uploadAdd').attr('for', `fileInput-${this.inputAmount}`);
 		},
-
+		/**
+		 * добавление выбранного файла
+		 * @param {object} instance - объект this
+		 */
 		create(instance)
 		{
 			$('._uploadItems').append(`
