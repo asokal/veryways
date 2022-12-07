@@ -1,23 +1,15 @@
 const gulp           = require('gulp'),
-	sass             = require('gulp-sass'),
+	sass             = require('gulp-sass')(require('sass')),
 	browserSync      = require('browser-sync'),
 	concat           = require('gulp-concat'),
 	uglify           = require('gulp-uglify'),
-	cssnano          = require('gulp-cssnano'),
-	rename           = require('gulp-rename'),
-	del              = require('del'),
 	imagemin         = require('gulp-imagemin'),
 	cache            = require('gulp-cache'),
 	autoprefixer     = require('gulp-autoprefixer'),
 	babel            = require('gulp-babel'),
-	imageminZopfli   = require('imagemin-zopfli'),
-	imageminGiflossy = require('imagemin-giflossy'),
 	plumber          = require('gulp-plumber'),
 	twig             = require('gulp-twig'),
-	gulpif           = require('gulp-if'),
 	htmlbeautify     = require('gulp-html-beautify'),
-	cheerio          = require('gulp-cheerio')
-	path             = require('path'),
 	gcmq             = require('gulp-group-css-media-queries');
 
 // таск для компиляции scss в css
@@ -126,30 +118,21 @@ gulp.task('img', () => {
 	return gulp.src(['img/*.png', 'img/*.jpg']) // откуда брать картинки
 	.pipe(cache(
 		imagemin([
-
-			pngquant({
-				speed: 1,
-				quality: 80 //lossy settings
-			}),
-			imageminZopfli({
-				more: true,
-				iterations: 10 // very slow but more effective
-			}),
 			//jpg lossless
 			imagemin.jpegtran({
 				progressive: true
 			}),
-			//jpg very light lossy, use vs jpegtran
-			imageminMozjpeg({
-				quality: 85
-			})
+			imagemin.optipng(),
 		])
 	))
 	.pipe(gulp.dest('img/')) // куда класть сжатые картинки
 });
 
 // сборка проекта
-gulp.task('build', gulp.series('sass', 'twig', 'scripts-build', 'img', () => { console.log('builded');}))
+gulp.task('build', (cb) => {
+	gulp.series('sass', 'twig', 'scripts-build', 'img', () => { console.log('builded');})
+	cb();
+})
 
 // основной таск, который запускает вспомогательные
 gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'scripts', () => { console.log('dev start');}));
